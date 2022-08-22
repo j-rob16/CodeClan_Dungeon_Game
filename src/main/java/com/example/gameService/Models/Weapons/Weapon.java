@@ -1,4 +1,4 @@
-package com.example.gameService.Weapons;
+package com.example.gameService.Models.Weapons;
 
 import javax.persistence.*;
 
@@ -16,12 +16,11 @@ public class Weapon {
     @Column(name = "damage")
     private int damage;
 
-    public Weapon() {};
-
     public Weapon(String name, int damage) {
         this.name = name;
         this.damage = damage;
     }
+    public Weapon() {};
 
     public String getName() {
         return name;
