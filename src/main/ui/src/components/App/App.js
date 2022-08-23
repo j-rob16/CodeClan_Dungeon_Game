@@ -1,9 +1,12 @@
+import styles from './styles.module.css';
 
+import { Main } from 'components';
 
-function App() {
+export const App = () => {
   return (
-    <>Our app</>
-  );
+    <div className={styles.main}>
+      <>I am the app</>
+      <Main />
+    </div>
+  )
 }
-
-export default App;
