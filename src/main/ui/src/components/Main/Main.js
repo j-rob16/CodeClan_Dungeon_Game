@@ -6,6 +6,7 @@ import { Header, LeaderBoard, Footer, GameContainer, StartMenu, CharacterSelect 
 export const Main = () => {
   const [gameData, setGameData] = useState();
   const [playersData, setPlayersData] = useState();
+  const [viewMode, setViewMode] = useState("main-menu");
 
   const getGameData = () =>
     Promise.all([
@@ -26,21 +27,15 @@ export const Main = () => {
       .then(function (data) {
         setGameData(data);
       })
+
       .catch(function (error) {
         console.log(error);
       });
 
-  async function getPlayerData(){
-    const url = 'http://localhost:8080/players';
-    const response = await fetch(url);
-    const data = await response.json();
-    setPlayersData(data)
-  }
-
   useEffect(() => {
     getGameData();
-    getPlayerData();
-  }, []);
+  }, []); 
+
 
   // state for leaderboard or gamecontainer to render either component ??
 
@@ -51,7 +46,7 @@ export const Main = () => {
       <hr></hr>
       {/* leaderboard or game container conditionally rendered by button click? yar */}
       <StartMenu/>
-      <CharacterSelect/>
+      <CharacterSelect players={playersData}/>
       <GameContainer />
       <LeaderBoard />
       <hr></hr>

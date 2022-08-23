@@ -1,9 +1,9 @@
 import styles from './styles.module.css'
 
-export const CharacterOption = () => {
+export const CharacterOption = ({player}) => {
   return (
     <div className = {styles.main}>
-      I am a character option.
+      {player.name}
     </div>
   )
 }
