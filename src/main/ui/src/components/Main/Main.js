@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import styles from './styles.module.css';
-import { Header, LeaderBoard, Footer, GameContainer } from 'components';
+import { Header, LeaderBoard, Footer, GameContainer, StartMenu, CharacterSelect } from 'components';
 
 export const Main = () => {
   const [gameData, setGameData] = useState();
@@ -37,11 +37,15 @@ export const Main = () => {
 
   return (
     <div className={styles.main}>
-      <p>I am the main container.</p>
+      <p>Main Container</p>
       <Header />
+      <hr></hr>
       {/* leaderboard or game container conditionally rendered by button click? yar */}
-      <LeaderBoard />
+      <StartMenu/>
+      <CharacterSelect/>
       <GameContainer />
+      <LeaderBoard />
+      <hr></hr>
       <Footer />
     </div>
   );
