@@ -4,7 +4,7 @@ export const StartGameButton=() =>{
 
     return (
         <div className={styles.main}>
-            Start Game Button component
+            <button>Start Game</button>
         </div>
       )
 }

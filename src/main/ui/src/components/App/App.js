@@ -5,7 +5,8 @@ import { Main } from 'components';
 export const App = () => {
   return (
     <div className={styles.main}>
-      <>I am the app</>
+      <>App.js</>
+      <hr></hr>
       <Main />
     </div>
   )

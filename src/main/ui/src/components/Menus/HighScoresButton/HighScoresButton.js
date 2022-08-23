@@ -4,7 +4,7 @@ export const HighScoreButton=() =>{
 
     return (
         <div className={styles.main}>
-           High Scores Button component
+           <button>High Scores</button>
         </div>
       )
 }
