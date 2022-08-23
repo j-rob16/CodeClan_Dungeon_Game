@@ -19,20 +19,18 @@ public class Player {
     private int maxHealth;
 
     @Column
-    private int exp;
+    private int exp = 0;
 
     @Column
-    private int level;
+    private int level = 1;
 
     @ManyToOne
     @JoinColumn(name = "weapon_id")
     private Weapon weapon;
 
-    public Player(String name, int maxHealth, int exp, int level, Weapon weapon) {
+    public Player(String name, int maxHealth, Weapon weapon) {
         this.name = name;
         this.maxHealth = maxHealth;
-        this.exp = exp;
-        this.level = level;
         this.weapon = weapon;
     }
 

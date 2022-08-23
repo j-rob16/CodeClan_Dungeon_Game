@@ -69,7 +69,7 @@ public class DataLoader implements ApplicationRunner {
         Enemy Slug = new Enemy("Sam the Slug", 100, 50, 1, shortSword);
         enemyRepository.save(Slug);
 
-        Player kevin = new Player("Kevin", 100, 10,1, battleAxe);
+        Player kevin = new Player("Kevin", 100, battleAxe);
         playerRepository.save(kevin);
 
         BattleEncounter battle1 = new BattleEncounter("First battle", Slug);
