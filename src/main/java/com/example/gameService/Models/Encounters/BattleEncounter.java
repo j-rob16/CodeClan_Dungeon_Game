@@ -16,7 +16,7 @@ public class BattleEncounter {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "enemy_id", nullable = false)
+    @JoinColumn(name = "enemy_id")
     private Enemy enemy;
 
     public BattleEncounter(String name, Enemy enemy) {

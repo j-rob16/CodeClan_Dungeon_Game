@@ -16,7 +16,7 @@ public class LootEncounter {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "weapon_id", nullable = false)
+    @JoinColumn(name = "weapon_id")
     private Weapon weapon;
 
     public LootEncounter(String name, Weapon weapon) {

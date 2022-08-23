@@ -25,7 +25,7 @@ public class Player {
     private int level;
 
     @ManyToOne
-    @JoinColumn(name = "weapon_id", nullable = false)
+    @JoinColumn(name = "weapon_id")
     private Weapon weapon;
 
     public Player(String name, int maxHealth, int exp, int level, Weapon weapon) {

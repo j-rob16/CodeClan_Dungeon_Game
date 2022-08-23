@@ -37,4 +37,12 @@ public class Weapon {
     public void setDamage(int damage) {
         this.damage = damage;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
