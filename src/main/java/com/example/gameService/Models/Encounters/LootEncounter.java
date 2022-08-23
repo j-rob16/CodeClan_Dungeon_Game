@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class LootEncounter {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column

@@ -10,6 +10,7 @@ import javax.persistence.*;
 public class BossEncounter {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
