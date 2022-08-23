@@ -1,4 +1,4 @@
-package com.example.gameService.EnemyTests;
+package com.example.gameService.CharacterTests;
 
 import com.example.gameService.Models.Characters.Enemy;
 import com.example.gameService.Models.Weapons.Weapon;
