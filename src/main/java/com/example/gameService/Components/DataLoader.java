@@ -72,6 +72,9 @@ public class DataLoader implements ApplicationRunner {
         Player kevin = new Player("Kevin", 100, battleAxe);
         playerRepository.save(kevin);
 
+        Player gimli = new Player("Gimli", 120, battleAxe);
+        playerRepository.save(gimli);
+
         BattleEncounter battle1 = new BattleEncounter("First battle", Slug);
         battleEncounterRepository.save(battle1);
 
