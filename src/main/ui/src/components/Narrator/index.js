@@ -1,1 +1,1 @@
-exports * from './Narrator'
+export * from './GameNarrator';

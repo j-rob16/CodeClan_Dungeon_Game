@@ -6,3 +6,4 @@ export * from './GameContainer';
 export * from './LeaderBoard';
 export * from './Main';
 export * from './Menus';
+export * from './Narrator';
