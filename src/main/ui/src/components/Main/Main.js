@@ -7,6 +7,7 @@ export const Main = () => {
   const [gameData, setGameData] = useState();
   const [playersData, setPlayersData] = useState();
   const [viewMode, setViewMode] = useState('game');
+  const [selectedCharacter, setSelectedCharacter] = useState([]);
 
   const getGameData = () =>
     Promise.all([
@@ -56,7 +57,7 @@ export const Main = () => {
       <Header viewModeClick={viewModeClick}/>
       <hr />
       {/* leaderboard or game container conditionally rendered by button click? yar */}
-      {viewMode === 'characters' && <CharacterSelect playersData={playersData}/>}
+      {viewMode === 'characters' && <CharacterSelect playersData={playersData} onCharacterClick={setSelectedCharacter}/>}
       {viewMode === 'game' && <GameContainer />}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
       <hr />
