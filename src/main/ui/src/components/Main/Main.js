@@ -36,20 +36,22 @@ export const Main = () => {
     getGameData();
   }, []); 
 
+  const viewModeClick = (string) => {
+    setViewMode(string);
+  }
 
   // state for leaderboard or gamecontainer to render either component ??
 
   return (
     <div className={styles.main}>
       <p>Main Container</p>
-      <Header />
-      <hr></hr>
+      <Header viewModeClick={viewModeClick}/>
+      <hr />
       {/* leaderboard or game container conditionally rendered by button click? yar */}
-      <StartMenu/>
-      <CharacterSelect players={playersData}/>
-      <GameContainer />
-      <LeaderBoard />
-      <hr></hr>
+      {viewMode === 'characters' && <CharacterSelect players={playersData}/>}
+      {viewMode === 'game' && <GameContainer />}
+      {viewMode === 'leaderBoard' && <LeaderBoard />}
+      <hr />
       <Footer />
     </div>
   );
