@@ -69,10 +69,10 @@ public class DataLoader implements ApplicationRunner {
         Enemy Slug = new Enemy("Sam the Slug", 100, 50, 1, shortSword);
         enemyRepository.save(Slug);
 
-        Player kevin = new Player("Kevin", 100, battleAxe);
+        Player kevin = new Player("Kevin", 100, "Warrior", 0,1, shortSword);
         playerRepository.save(kevin);
 
-        Player gimli = new Player("Gimli", 120, battleAxe);
+        Player gimli = new Player("Gimli", 120, "Dwarven Axemaster", 0, 1, battleAxe);
         playerRepository.save(gimli);
 
         BattleEncounter battle1 = new BattleEncounter("First battle", Slug);
