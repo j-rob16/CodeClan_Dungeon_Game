@@ -1,26 +1,17 @@
 import React from 'react'
 import styles from './styles.module.css'
+import { CharacterOption } from '../CharacterOption'
 
-export const CharacterSelect = ({playersData}) => {
-
-  // if (players !== null){
-  //   playerList = players.map((player) => {
-  //     return (
-  //     <CharacterSelect player={player}/>
-  //     )
-  //   })
-  // } else {
-  //   return
-  // }
+export const CharacterSelect = ({playersData, onCharacterClick}) => {
 
   const playerList = playersData.map((player, index) => {
-    return (
-      <div className={styles.main}>
-        <p>Name: {player.name}</p>
-        <p>Health: {player.maxHealth}</p>
-        <p>Level: {player.level}</p>
-      </div>
-    )
+
+    if (playersData === undefined){
+      return null
+    } else {
+      return <CharacterOption player={player} onClick={onCharacterClick} key={player}/>
+    }
+
   })
   
   return (
