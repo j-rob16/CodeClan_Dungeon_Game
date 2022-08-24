@@ -4,11 +4,11 @@ import styles from './styles.module.css';
 import { Header, LeaderBoard, Footer, GameContainer, StartMenu, CharacterSelect } from 'components';
 
 export const Main = () => {
+  const [viewMode, setViewMode] = useState('game');
   const [gameData, setGameData] = useState([]);
   const [playersData, setPlayersData] = useState(null);
-  const [viewMode, setViewMode] = useState('game');
   const [selectedCharacter, setSelectedCharacter] = useState([]);
-
+  
   const getGameData = () =>
     Promise.all([
       fetch('http://localhost:8080/players'),
@@ -37,12 +37,12 @@ export const Main = () => {
     getGameData();
   }, []); 
 
-  async function getPlayerCharacters() {
-    setPlayersData(gameData[0])
+  async function setAllGameData() {
+    setPlayersData(gameData[0]);
   }
 
   useEffect(() => {
-    getPlayerCharacters()
+    setAllGameData();
   }, [gameData])
 
   const viewModeClick = (string) => {
@@ -58,7 +58,7 @@ export const Main = () => {
       <hr />
       {/* leaderboard or game container conditionally rendered by button click? yar */}
       {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
-      {viewMode === 'game' && <GameContainer />}
+      {viewMode === 'game' && <GameContainer selectedCharacter={selectedCharacter} gameData={gameData}/>}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
       <hr />
       <Footer />
