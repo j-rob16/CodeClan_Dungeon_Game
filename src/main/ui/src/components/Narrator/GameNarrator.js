@@ -1,11 +1,12 @@
-import {useScriptedResponse} from 'UseComponents';
+import { useScriptedResponse } from 'UseComponents';
+import styles from './styles.module.css';
 
-export const GameNarrator = ({naration}) => {
-  const scriptedResponse = useScriptedResponse(naration);
+export const GameNarrator = ({ script }) => {
+  const scriptedResponse = useScriptedResponse(script);
 
   return (
     <div className={styles.main}>
-      <div className={styles.narration}>scriptedResponse</div>
+      <div className={styles.script}>{scriptedResponse}</div>
     </div>
   );
 };
