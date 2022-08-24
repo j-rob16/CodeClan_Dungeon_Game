@@ -6,7 +6,7 @@ import { Header, LeaderBoard, Footer, GameContainer, StartMenu, CharacterSelect 
 export const Main = () => {
   const [gameData, setGameData] = useState();
   const [playersData, setPlayersData] = useState();
-  const [viewMode, setViewMode] = useState("main-menu");
+  const [viewMode, setViewMode] = useState('game');
 
   const getGameData = () =>
     Promise.all([
@@ -36,6 +36,14 @@ export const Main = () => {
     getGameData();
   }, []); 
 
+  async function getPlayerCharacters() {
+    setPlayersData(gameData[0])
+  }
+
+  useEffect(() => {
+    getPlayerCharacters()
+  }, [gameData])
+
   const viewModeClick = (string) => {
     setViewMode(string);
   }
@@ -48,7 +56,7 @@ export const Main = () => {
       <Header viewModeClick={viewModeClick}/>
       <hr />
       {/* leaderboard or game container conditionally rendered by button click? yar */}
-      {viewMode === 'characters' && <CharacterSelect players={playersData}/>}
+      {viewMode === 'characters' && <CharacterSelect playersData={playersData}/>}
       {viewMode === 'game' && <GameContainer />}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
       <hr />
