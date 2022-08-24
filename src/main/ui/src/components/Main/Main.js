@@ -6,7 +6,7 @@ import { Header, LeaderBoard, Footer, GameContainer, StartMenu, CharacterSelect 
 export const Main = () => {
   const [gameData, setGameData] = useState();
   const [playersData, setPlayersData] = useState();
-  const [viewMode, setViewMode] = useState("main-menu");
+  const [viewMode, setViewMode] = useState('game');
 
   const getGameData = () =>
     Promise.all([
@@ -36,20 +36,30 @@ export const Main = () => {
     getGameData();
   }, []); 
 
+  async function getPlayerCharacters() {
+    setPlayersData(gameData[0])
+  }
+
+  useEffect(() => {
+    getPlayerCharacters()
+  }, [gameData])
+
+  const viewModeClick = (string) => {
+    setViewMode(string);
+  }
 
   // state for leaderboard or gamecontainer to render either component ??
 
   return (
     <div className={styles.main}>
       <p>Main Container</p>
-      <Header />
-      <hr></hr>
+      <Header viewModeClick={viewModeClick}/>
+      <hr />
       {/* leaderboard or game container conditionally rendered by button click? yar */}
-      <StartMenu/>
-      <CharacterSelect players={playersData}/>
-      <GameContainer />
-      <LeaderBoard />
-      <hr></hr>
+      {viewMode === 'characters' && <CharacterSelect playersData={playersData}/>}
+      {viewMode === 'game' && <GameContainer />}
+      {viewMode === 'leaderBoard' && <LeaderBoard />}
+      <hr />
       <Footer />
     </div>
   );

@@ -5,8 +5,6 @@ import { Main } from 'components';
 export const App = () => {
   return (
     <div className={styles.main}>
-      <>App.js</>
-      <hr></hr>
       <Main />
     </div>
   )

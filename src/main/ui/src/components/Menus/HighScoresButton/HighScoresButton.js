@@ -1,10 +1,14 @@
 import styles from'./styles.module.css';
 
-export const HighScoreButton=() =>{
+export const HighScoreButton=({viewModeClick}) =>{
+
+    const handleButtonClick = (evt) => {
+      viewModeClick(evt.target.value);
+    }
 
     return (
         <div className={styles.main}>
-           <button>High Scores</button>
+           <button onClick={handleButtonClick} value='leaderBoard'>High Scores</button>
         </div>
       )
 }

@@ -480,3 +480,183 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-08-24 11:08:12 jdbc[204]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:08:12 jdbc[205]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:08:12 jdbc[206]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:08:12 jdbc[207]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:08:12 jdbc[203]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:08:12 jdbc[208]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:08:12 jdbc[204]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:08:12 jdbc[203]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:08:12 jdbc[205]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:08:12 jdbc[206]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:08:12 jdbc[205]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:08:12 jdbc[203]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:09:13 jdbc[207]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:09:13 jdbc[208]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:09:13 jdbc[205]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:09:13 jdbc[203]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:09:13 jdbc[206]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:09:13 jdbc[204]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:09:13 jdbc[204]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:09:13 jdbc[206]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:09:13 jdbc[205]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:09:13 jdbc[203]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:09:13 jdbc[205]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:09:13 jdbc[203]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:44:21 jdbc[217]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:44:21 jdbc[216]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:44:21 jdbc[215]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:44:21 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:44:21 jdbc[214]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:44:21 jdbc[218]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:44:21 jdbc[214]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:44:21 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:44:21 jdbc[215]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:44:21 jdbc[216]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:44:21 jdbc[217]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:44:21 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:44:42 jdbc[214]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:44:42 jdbc[218]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:44:42 jdbc[217]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:44:42 jdbc[215]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:44:42 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:44:42 jdbc[216]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:44:42 jdbc[216]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:44:42 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:44:42 jdbc[217]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:44:42 jdbc[216]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:44:42 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:44:42 jdbc[218]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:45:09 jdbc[215]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:45:09 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:45:09 jdbc[217]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:45:09 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:45:09 jdbc[214]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:45:09 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]
+2022-08-24 11:45:09 jdbc[217]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PLAYER" not found (this database is empty); SQL statement:
+select player0_.id as id1_4_, player0_.exp as exp2_4_, player0_.level as level3_4_, player0_.max_health as max_heal4_4_, player0_.name as name5_4_, player0_.weapon_id as weapon_i6_4_ from player player0_ [42104-214]
+2022-08-24 11:45:09 jdbc[216]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WEAPONS" not found (this database is empty); SQL statement:
+select weapon0_.id as id1_5_, weapon0_.damage as damage2_5_, weapon0_.name as name3_5_ from weapons weapon0_ [42104-214]
+2022-08-24 11:45:09 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ENEMIES" not found (this database is empty); SQL statement:
+select enemy0_.id as id1_2_, enemy0_.exp as exp2_2_, enemy0_.level as level3_2_, enemy0_.max_health as max_heal4_2_, enemy0_.name as name5_2_, enemy0_.weapon_id as weapon_i6_2_ from enemies enemy0_ [42104-214]
+2022-08-24 11:45:09 jdbc[218]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BATTLES" not found (this database is empty); SQL statement:
+select battleenco0_.id as id1_0_, battleenco0_.enemy_id as enemy_id3_0_, battleenco0_.name as name2_0_ from battles battleenco0_ [42104-214]
+2022-08-24 11:45:09 jdbc[213]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOSSES" not found (this database is empty); SQL statement:
+select bossencoun0_.id as id1_1_, bossencoun0_.enemy_id as enemy_id3_1_, bossencoun0_.name as name2_1_ from bosses bossencoun0_ [42104-214]
+2022-08-24 11:45:09 jdbc[215]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LOOTS" not found (this database is empty); SQL statement:
+select lootencoun0_.id as id1_3_, lootencoun0_.name as name2_3_, lootencoun0_.weapon_id as weapon_i3_3_ from loots lootencoun0_ [42104-214]

@@ -6,7 +6,6 @@ export const StartMenu = ({onStartClick}) => {
     <div className={styles.main}>
       Start Menu/Screen
       <StartGameButton/>
-      <HighScoreButton/>
       {/* <button className={styles.startButton} onCLick={onStartClick}>Start Game</button> */}
     </div>
   );
