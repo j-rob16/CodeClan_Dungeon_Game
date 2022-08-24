@@ -1,17 +1,18 @@
 import styles from './styles.module.css'
 
-export const CharacterOption = ({player, onClick}) => {
+export const CharacterOption = ({player, onClick, viewModeClick}) => {
 
-  function handleCharacterClick(){
+  function handleCharacterClick(evt){
     onClick(player);
+    viewModeClick(evt.target.value);
   }
 
   return (
       <div className={styles.main}>
         <p>Name: {player.name}</p>
-        <p>Health: {player.maxHealth}</p>
-        <p>Level: {player.level}</p>
-        <button onClick={handleCharacterClick}>Select Character!</button>
+        <p>Class: This needs added to DB!</p>
+        <p>Weapon: {player.weapon.name}</p>
+        <button onClick={handleCharacterClick} viewModeClick={viewModeClick} value='game'>Select Character!</button>
       </div>
   )
 }
