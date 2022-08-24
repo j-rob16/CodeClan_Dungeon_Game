@@ -9,7 +9,7 @@ export const CharacterSelect = ({playersData, onCharacterClick, viewModeClick}) 
     if (playersData === null){
       return null
     } else {
-      return <CharacterOption player={player} onClick={onCharacterClick} key={player} viewModeClick={viewModeClick}/>
+      return <CharacterOption player={player} onClick={onCharacterClick} key={player.id} viewModeClick={viewModeClick}/>
     }
 
   })

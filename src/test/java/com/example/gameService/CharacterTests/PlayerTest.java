@@ -15,7 +15,7 @@ public class PlayerTest {
     @BeforeEach
     public void before() {
         katana = new Weapon("Katana", 30);
-        player = new Player("Rod", 160, katana);
+        player = new Player("Rod", 160, "Warrior", 0, 1, katana);
     }
 
     @Test

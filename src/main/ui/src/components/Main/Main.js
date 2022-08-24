@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import { Header, LeaderBoard, Footer, GameContainer, StartMenu, CharacterSelect } from 'components';
 
 export const Main = () => {
-  const [gameData, setGameData] = useState();
+  const [gameData, setGameData] = useState([]);
   const [playersData, setPlayersData] = useState(null);
   const [viewMode, setViewMode] = useState('game');
   const [selectedCharacter, setSelectedCharacter] = useState([]);

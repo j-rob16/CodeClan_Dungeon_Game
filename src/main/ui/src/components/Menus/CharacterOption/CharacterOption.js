@@ -12,7 +12,7 @@ export const CharacterOption = ({player, onClick, viewModeClick}) => {
         <p>Name: {player.name}</p>
         <p>Class: This needs added to DB!</p>
         <p>Weapon: {player.weapon.name}</p>
-        <button onClick={handleCharacterClick} viewModeClick={viewModeClick} value='game'>Select Character!</button>
+        <button onClick={handleCharacterClick} value='game'>Select Character!</button>
       </div>
   )
 }
