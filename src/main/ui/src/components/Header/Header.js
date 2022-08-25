@@ -9,9 +9,7 @@ export const Header = ({viewModeClick}) => {
 
   return (
     <div className={styles.main}>
-      Header
-      <button onClick={handleButtonClick} value='game'>Play</button>
-      <button onClick={handleButtonClick} value='characters'>Characters</button>
+      <h2>CodeClan Battles</h2>
       <HighScoreButton viewModeClick={viewModeClick}/>
     </div>
   )

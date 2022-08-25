@@ -23,7 +23,7 @@ export const BattleContainer = ({selectedCharacter, gameData}) => {
           <Character selectedCharacter={gameData[3][0].enemy}/>
         </div>
         <h3>
-          <GameNarrator script={'what will your hero do?'} />
+          <GameNarrator script={'What will your hero do?'} />
         </h3>
         <div className={styles.BattleMenu}>
           <BattleMenu />

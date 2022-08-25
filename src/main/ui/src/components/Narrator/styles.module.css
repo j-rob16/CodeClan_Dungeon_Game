@@ -1,4 +1,7 @@
 .main {
+  border: black solid;
+  padding: 1rem;
+  background-color: white;
 }
 
 .script {
