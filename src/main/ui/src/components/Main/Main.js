@@ -53,16 +53,12 @@ export const Main = () => {
 
   return (
     <div className={styles.main}>
-      <p>Main Container</p>
       <Header viewModeClick={viewModeClick}/>
-      <hr />
       {/* leaderboard or game container conditionally rendered by button click? yar */}
       {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
       {selectedCharacter !== null && viewMode === 'game' && <GameContainer selectedCharacter={selectedCharacter} gameData={gameData}/>}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
       {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
-
-      <hr />
       <Footer />
     </div>
   );

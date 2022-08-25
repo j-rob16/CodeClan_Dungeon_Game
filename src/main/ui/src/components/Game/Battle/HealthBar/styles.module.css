@@ -5,6 +5,7 @@
     padding: 5px;
     align-items: center;
     background-color: white;
+    border: black solid;
   }
   
   .label {

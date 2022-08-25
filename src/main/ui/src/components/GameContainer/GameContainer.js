@@ -22,7 +22,6 @@ export const GameContainer = ({gameData, selectedCharacter}) => {
 
   return (
     <div className={styles.main}>
-      Game Container
       {/* <StartMenu/> */}
       <BattleContainer selectedCharacter={selectedCharacter} gameData={gameData}/>
     </div>
