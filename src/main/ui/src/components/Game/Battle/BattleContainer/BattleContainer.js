@@ -3,12 +3,12 @@ import styles from './styles.module.css';
 import { Character, BattleMenu } from 'components';
 import { GameNarrator } from 'components';
 
-export const BattleContainer = () => {
+export const BattleContainer = ({selectedCharacter}) => {
   return (
     <>
       <div className={styles.main}>
         <div className={styles.Player}>
-          <Character />
+          <Character selectedCharacter={selectedCharacter}/>
         </div>
         <div className={styles.Enemy}>
           <Character />
