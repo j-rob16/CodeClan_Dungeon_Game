@@ -20,4 +20,5 @@ export const Character = ({selectedCharacter}) => {
        </div>
       </div>
     );
+   
   };
