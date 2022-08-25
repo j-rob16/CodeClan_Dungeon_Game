@@ -13,8 +13,9 @@ export const Character = ({selectedCharacter}) => {
     return (
       <div className={styles.main}>
        Character
+      
        <div className = {styles.HealthBar}>
-       <HealthBar />
+       <HealthBar label ="Health" current ={selectedCharacter.health} max = {selectedCharacter.maxHealth}   />
        <p>Name: {selectedCharacter.name}</p>
        </div>
       </div>

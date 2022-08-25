@@ -13,6 +13,7 @@ export const BattleContainer = ({selectedCharacter, gameData}) => {
   return (
     <>
       <div className={styles.main}>
+    
         <div className={styles.Player}>
           <Character selectedCharacter={selectedCharacter}/>
         </div>
