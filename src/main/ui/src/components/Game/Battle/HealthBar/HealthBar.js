@@ -1,6 +1,6 @@
 import styles from'./styles.module.css';
 
-export const HealthBar=() =>{
+export const HealthBar=({}) =>{
 
     return (
         <div className={styles.main}>

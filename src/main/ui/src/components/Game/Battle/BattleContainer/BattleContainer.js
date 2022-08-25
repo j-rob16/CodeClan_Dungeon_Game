@@ -4,12 +4,15 @@ import { Character, BattleMenu } from 'components';
 import { GameNarrator } from 'components';
 import React from 'react';
 
-export const BattleContainer = ({selectedCharacter}) => {
+export const BattleContainer = ({selectedCharacter, battleEncounters}) => {
+
+  // const enemy = battleEncounters[0].enemy
+
   return (
     <>
       <div className={styles.main}>
         <div className={styles.Player}>
-          <Character entity={selectedCharacter}/>
+          <Character selectedCharacter={selectedCharacter}/>
         </div>
         <div className={styles.Enemy}>
           <Character />
