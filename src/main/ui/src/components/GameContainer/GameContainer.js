@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { StartMenu } from 'components/Menus';
 import { BattleContainer } from 'components/Game/Battle';
-export const GameContainer = ({gameData}) => {
+export const GameContainer = ({gameData}, {selectedCharacter}) => {
 
   const [weaponsData, setWeaponsData] = useState([]);
   const [enemiesData, setEnemiesdata] = useState([]);
