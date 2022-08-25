@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import { Header, LeaderBoard, Footer, GameContainer, StartMenu, CharacterSelect } from 'components';
 
 export const Main = () => {
-  const [viewMode, setViewMode] = useState('game');
+  const [viewMode, setViewMode] = useState('start');
   const [gameData, setGameData] = useState([]);
   const [playersData, setPlayersData] = useState(null);
   const [selectedCharacter, setSelectedCharacter] = useState([]);
@@ -60,6 +60,8 @@ export const Main = () => {
       {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
       {viewMode === 'game' && <GameContainer selectedCharacter={selectedCharacter} gameData={gameData}/>}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
+      {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
+
       <hr />
       <Footer />
     </div>

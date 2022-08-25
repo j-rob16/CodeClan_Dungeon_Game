@@ -24,7 +24,7 @@ export const GameContainer = ({gameData, selectedCharacter}) => {
     <div className={styles.main}>
       Game Container
       {/* <StartMenu/> */}
-      <BattleContainer selectedCharacter={selectedCharacter} battleEncounter = {battleEncounters}/>
+      <BattleContainer selectedCharacter={selectedCharacter} battleEncounters={battleEncounters}/>
     </div>
   );
 };
