@@ -3,11 +3,8 @@ import styles from './styles.module.css';
 import { CharacterOption } from '../CharacterOption';
 import { GameNarrator } from 'components/Narrator';
 
-export const CharacterSelect = ({
-  playersData,
-  onCharacterClick,
-  viewModeClick,
-}) => {
+export const CharacterSelect = ({playersData, onCharacterClick, viewModeClick}) => {
+
   const playerList = playersData.map((player, index) => {
     if (playersData === null) {
       return null;
