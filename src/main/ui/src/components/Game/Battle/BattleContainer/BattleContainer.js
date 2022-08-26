@@ -10,6 +10,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
 
   const [sequence, setSequence] = useState({});
   const [enemyCurrentHealthProp, setEnemyCurrentHealthProp] = useState(50)
+  const [characterCurrentHealthProp, setCharacterCurrentHealthProp] = useState(50)
 
   const {
     character,
@@ -25,7 +26,8 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
 
   useEffect (() => {
     setEnemyCurrentHealthProp(enemyCurrentHealth);
-  }, [enemyCurrentHealth])
+    setCharacterCurrentHealthProp(characterCurrentHealth);
+  }, [enemyCurrentHealth, characterCurrentHealth])
 
   const aiChoice = useAIOpponent(turn);
 
@@ -36,13 +38,13 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
   }, [turn, aiChoice, inEncounter]);
 
   useEffect(() => {
-    if (characterHealth === 0 || enemyCurrentHealth === 0) {
+    if (characterCurrentHealth === 0 || enemyCurrentHealth === 0) {
       (async () => {
         await pause(1000);
-        onGameEnd(characterHealth === 0 ? character : enemy);
+        onGameEnd(characterCurrentHealth === 0 ? character : enemy);
       })();
     }
-  }, [characterHealth, enemyCurrentHealth, onGameEnd]);
+  }, [characterCurrentHealth, enemyCurrentHealth, onGameEnd]);
 
   return (
     <>
@@ -71,6 +73,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
           <div className={styles.summary}>
             <Character 
               character={selectedCharacter}
+              currentHealth={characterCurrentHealthProp}
             />
           </div>
         </div>
@@ -78,7 +81,8 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
         <div>
           <h3>
             <GameNarrator 
-              script={`What will ${selectedCharacter.name} do?`} 
+              // script={`What will ${selectedCharacter.name} do?`} 
+              script={narratorScript}
             />
           </h3>
         </div>
