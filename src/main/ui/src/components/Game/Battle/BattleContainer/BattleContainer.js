@@ -11,10 +11,12 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
   const [sequence, setSequence] = useState({});
 
   const {
+    character,
+    enemy,
     characterHealth,
     enemyHealth,
     inEncounter,
-    narratorMessage,
+    narratorScript,
     turn
   } = useBattleEncounter(sequence);
 
@@ -22,7 +24,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
 
   useEffect(() => {
     if (aiChoice && turn === 1 && !inEncounter) {
-      setSequence({turn, action: aiChoice });
+      setSequence({turn, battleMode: aiChoice });
     }
   }, [turn, aiChoice, inEncounter]);
 
@@ -30,7 +32,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
     if (characterHealth === 0 || enemyHealth === 0) {
       (async () => {
         await pause(1000);
-        onGameEnd(characterHealth === 0 ? Enemy : Character);
+        onGameEnd(characterHealth === 0 ? character : enemy);
       })();
     }
   }, [characterHealth, enemyHealth, onGameEnd]);
@@ -72,14 +74,13 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
             />
           </h3>
         </div>
-
-        <div className={styles.BattleMenu}>
+        {!inEncounter && turn === 0 && (<div className={styles.BattleMenu}>
           <BattleMenu 
-            onAttack={() => setSequence({ action: 'attack', turn})}
-            onUsePotion={() => setSequence({ action: 'usePotion', turn })}
+            onAttack={() => setSequence({ battleMode: 'attack', turn})}
+            onUsePotion={() => setSequence({ battleMode: 'usePotion', turn })}
           />
-        </div>
-
+        </div>)}
+        
       </div>
     </>
   );

@@ -56,7 +56,7 @@ export const Main = () => {
       <Header viewModeClick={viewModeClick}/>
       {/* leaderboard or game container conditionally rendered by button click? yar */}
       {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
-      {selectedCharacter !== null && viewMode === 'game' && <GameContainer selectedCharacter={selectedCharacter} gameData={gameData} viewMode={viewMode} setGameOver={() => setViewMode('gameOver')}/>}
+      {selectedCharacter !== null && viewMode === 'game' && <GameContainer selectedCharacter={selectedCharacter} gameData={gameData} setGameOver={() => setViewMode('gameOver')}/>}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
       {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
       <Footer />

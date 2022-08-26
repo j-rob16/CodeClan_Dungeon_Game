@@ -1,49 +1,67 @@
 import { useState, useEffect } from "react";
+import { GameNarrator } from "components";
 import { pause } from "SharedComponents";
 import { attack, usePotion } from "SharedComponents/battleFunctions";
-import { Character, Enemy } from "components";
-// import {selectedCharacter, gameData} 
+// import { Character, Enemy } from "components";
+// import {selectedCharacter, gameData} from 
 
 
-export const useBattleEncounter = encounter => {
+export const useBattleEncounter = ( encounter ) => {
   const [turn, setTurn] = useState(0);
   const [inEncounter, setInEncounter] = useState(false);
 
-  const [characterHealth, setCharacterHealth] = useState(Character.maxHealth);
-  const [enemyHealth, setEnemyHealth] =  useState(Enemy.maxHealth);
+  const [characterHealth, setCharacterHealth] = useState(100);
+  const [enemyHealth, setEnemyHealth] =  useState(100);
 
   const [narratorScript, setNarratorScript] = useState('');
+
+  const [character, setCharacter] = useState({name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 18, id: 2, name: "Short Sword"}});
+  const [enemy, setEnemy] = useState({exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapon:{damage: 18, id: 2, name: "Short Sword"}});
   
   // animations here
   // characterAnimation
   // enemy Animation
 
   useEffect (() => {
-    const { action, turn } = encounter;
+    const { battleMode, turn } = encounter;
 
-    if (action) {
-      const fighter = turn === 0 ? Character : Enemy;
-      const defender = turn === 0 ? Enemy : Character;
+    if (characterHealth === undefined){
+      return null
+    }
+    if (enemyHealth === undefined){
+      return null
+    }
+
+    if (battleMode) {
+      const fighter = turn === 0 ? character : enemy;
+      const defender = turn === 0 ? enemy : character;
       
-      switch (action) {
+      switch (battleMode) {
         case 'attack' : {
           const damage = attack({ fighter, defender });
 
           (async () => {
+            console.log(fighter + defender);
+            console.log("step1")
             setInEncounter(true);
             setNarratorScript(`${fighter.name} attacks!`);
             await pause(1000);
 
+            console.log("step2")
             turn === 0
               ? setEnemyHealth(h => (h - damage > 0 ? h - damage : 0))
               : setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
-            await pause(2000);
+            await pause(1000);
 
+            console.log("step3")
             setNarratorScript(`${defender.name} responds!`);
             await pause(1000);
 
+            console.log("step4")
             setTurn(turn === 0 ? 1 : 0);
             setInEncounter(false);
+
+            console.log("script finished")
 
           })();
           break;
@@ -86,7 +104,7 @@ export const useBattleEncounter = encounter => {
     }
   }, [encounter]) //end of use effect whatever sequence is in bracket
 
-    return {
-      turn, inEncounter, characterHealth, enemyHealth, narratorScript
-    }
+  return {
+    turn, inEncounter, characterHealth, enemyHealth, narratorScript
+  }
 }
