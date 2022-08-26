@@ -6,10 +6,6 @@ import React from 'react';
 
 export const BattleContainer = ({selectedCharacter, gameData}) => {
 
-  // if (battleEncounters[0].enemy === undefined) {
-  //   return null
-  // }
-
   return (
     <>
       <div className={styles.main}>
@@ -18,12 +14,10 @@ export const BattleContainer = ({selectedCharacter, gameData}) => {
           <Character selectedCharacter={selectedCharacter}/>
         </div>
         <div className={styles.Enemy}>
-          {/* {selectedCharacter !== undefined? <Character selectedCharacter={battleEncounters[0].enemy}/> : null} */}
-          
           <Character selectedCharacter={gameData[3][0].enemy}/>
         </div>
         <h3>
-          <GameNarrator script={'What will your hero do?'} />
+          <GameNarrator script={`What will ${selectedCharacter.name} do?`} />
         </h3>
         <div className={styles.BattleMenu}>
           <BattleMenu />
