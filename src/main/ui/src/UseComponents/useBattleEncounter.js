@@ -15,8 +15,8 @@ export const useBattleEncounter = ( encounter ) => {
   
   const [narratorScript, setNarratorScript] = useState('');
   
-  const [character, setCharacter] = useState({name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 18, id: 2, name: "Short Sword"}});
-  const [enemy, setEnemy] = useState({exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapon:{damage: 18, id: 2, name: "Short Sword"}});
+  const [character, setCharacter] = useState({name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 60, id: 2, name: "Short Sword"}});
+  const [enemy, setEnemy] = useState({exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapon:{damage: 20, id: 2, name: "Short Sword"}});
   
   const [characterCurrentHealth, setCharacterCurrentHealth] = useState(character.maxHealth);
   const [enemyCurrentHealth, setEnemyCurrentHealth] = useState(enemy.maxHealth);

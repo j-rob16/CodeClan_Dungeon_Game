@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 
 import React, { useEffect, useState } from 'react';
 
-import { StartMenu } from 'components/Menus';
+import { EndMenu, StartMenu } from 'components/Menus';
 import { BattleContainer } from 'components/Game/Battle';
 export const GameContainer = ({gameData, selectedCharacter, setGameOver}) => {
   
@@ -17,6 +17,7 @@ export const GameContainer = ({gameData, selectedCharacter, setGameOver}) => {
 
   return (
     <div className={styles.main}>
+      <div>
       {battleMode === 'battle' && (
         <BattleContainer 
           selectedCharacter={selectedCharacter} 
@@ -26,7 +27,9 @@ export const GameContainer = ({gameData, selectedCharacter, setGameOver}) => {
             setGameOver();
           }}
         />
-      )}     
+      )}
+      </div>
     </div>
+    
   );
 };
