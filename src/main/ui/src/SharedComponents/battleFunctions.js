@@ -1,5 +1,5 @@
 export const attack = ({fighter, defender}) => {
-  const damage = fighter.weapon.weaponDamage;
+  const damage = fighter.damage;
 
   const damageTaken = defender.maxHealth - damage;
 

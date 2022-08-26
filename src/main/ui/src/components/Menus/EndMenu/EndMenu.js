@@ -1,3 +1,6 @@
-export const EndMenu = ({winner, onStartClick}) => {
+import styles from './styles.module.css';
+
+export const EndMenu = ({}) => {
   return 
+  
 }
