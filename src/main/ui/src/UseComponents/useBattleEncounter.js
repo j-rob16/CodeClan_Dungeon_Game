@@ -10,14 +10,16 @@ export const useBattleEncounter = ( encounter ) => {
   const [turn, setTurn] = useState(0);
   const [inEncounter, setInEncounter] = useState(false);
 
-  const [characterHealth, setCharacterHealth] = useState(100);
-  const [enemyHealth, setEnemyHealth] =  useState(100);
-
+  const [characterHealth, setCharacterHealth] = useState(1);
+  const [enemyHealth, setEnemyHealth] =  useState(1);
+  
   const [narratorScript, setNarratorScript] = useState('');
-
+  
   const [character, setCharacter] = useState({name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 18, id: 2, name: "Short Sword"}});
   const [enemy, setEnemy] = useState({exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapon:{damage: 18, id: 2, name: "Short Sword"}});
   
+  const [characterCurrentHealth, setCharacterCurrentHealth] = useState(character.maxHealth);
+  const [enemyCurrentHealth, setEnemyCurrentHealth] = useState(enemy.maxHealth);
   // animations here
   // characterAnimation
   // enemy Animation
@@ -32,6 +34,9 @@ export const useBattleEncounter = ( encounter ) => {
       return null
     }
 
+    setCharacterHealth(character.maxHealth);
+    setEnemyHealth(enemy.maxHealth);
+
     if (battleMode) {
       const fighter = turn === 0 ? character : enemy;
       const defender = turn === 0 ? enemy : character;
@@ -41,16 +46,28 @@ export const useBattleEncounter = ( encounter ) => {
           const damage = attack({ fighter, defender });
 
           (async () => {
-            console.log(fighter + defender);
-            console.log("step1")
+            console.log(fighter.name + defender.name);
+            console.log(characterHealth);
+            console.log(enemyHealth);
+            console.log(damage)
+            console.log("step1");
             setInEncounter(true);
             setNarratorScript(`${fighter.name} attacks!`);
             await pause(1000);
 
             console.log("step2")
             turn === 0
-              ? setEnemyHealth(h => (h - damage > 0 ? h - damage : 0))
-              : setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
+              ? setEnemyCurrentHealth(enemyHealth => (enemyHealth - damage > 0 
+              ? enemyHealth - damage : 0
+              ))
+              
+              : setCharacterCurrentHealth(h => (h - damage > 0 
+                ? h - damage :0
+                )
+              );
+            console.log(characterHealth);
+            console.log(enemyHealth);
+
             await pause(1000);
 
             console.log("step3")
@@ -99,12 +116,12 @@ export const useBattleEncounter = ( encounter ) => {
         //   })();
         //   break;
         // }
-        default: break;
+        // default: break;
       }
     }
   }, [encounter]) //end of use effect whatever sequence is in bracket
 
   return {
-    turn, inEncounter, characterHealth, enemyHealth, narratorScript
+    turn, inEncounter, characterHealth, characterCurrentHealth, enemyHealth, enemyCurrentHealth, narratorScript,
   }
 }

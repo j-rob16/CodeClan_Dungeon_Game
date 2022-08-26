@@ -1,9 +1,8 @@
 export const attack = ({fighter, defender}) => {
-  const damage = fighter.damage;
-
-  const damageTaken = defender.maxHealth - damage;
-
-  return damageTaken;
+  const damage = fighter.weapon.damage
+    return damage;
+  // const damageTaken = defender.maxHealth - damage;
+  // return damageTaken;
 };
 
 export const usePotion = ({ taker }) => {
