@@ -3,10 +3,12 @@
   padding: 1rem;
   text-align: center;
   margin: 1rem;
-  background-color: antiquewhite;
   background-color: slategray;
   display: flex;
   flex-direction: column;
+  background-image: url(https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/3ec04946-604a-4011-9e42-027d362fcbb7_scaled.jpg);
+  background-size:cover;
+
 }
 
 .options {
