@@ -1,9 +1,46 @@
 .main{
-  border: 1px black dashed;
+  border: 1px black solid;
+  border-radius: 5px;
+  background-color: white;
   padding: 1rem;
   text-align: center;
-  margin: 1rem
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
 }
+
+/* div:hover {
+  cursor: pointer;
+} */
+
+.button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100px;
+  margin: 1rem;
+  border-radius: 10px;
+  border: 1px black solid;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 5px, 10px, darkgrey;
+}
+
+.button:hover {
+  transform: rotate(358deg);
+}
+
 .CharacterImage{
-  height: 200px;
+  height: 100px;
+}
+
+.stats {
+  font-size: larger;
 }
