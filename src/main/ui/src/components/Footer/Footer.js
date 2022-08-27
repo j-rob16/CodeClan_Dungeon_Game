@@ -4,7 +4,7 @@ export const Footer=() =>{
 
     return (
         <div className={styles.main}>
-            The Lads Made A Game
+            <p className={styles.glow}>The Lads Made A Game</p>
         </div>
       )
 }
