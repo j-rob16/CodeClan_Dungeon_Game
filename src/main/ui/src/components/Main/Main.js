@@ -54,11 +54,13 @@ export const Main = () => {
   return (
     <div className={styles.main}>
       <Header viewModeClick={viewModeClick}/>
-      {/* leaderboard or game container conditionally rendered by button click? yar */}
-      {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
-      {selectedCharacter !== null && viewMode === 'game' && <GameContainer selectedCharacter={selectedCharacter} gameData={gameData} setGameOver={() => setViewMode('gameOver')}/>}
-      {viewMode === 'leaderBoard' && <LeaderBoard />}
-      {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
+      <div className={styles.screen}>
+        {/* leaderboard or game container conditionally rendered by button click? yar */}
+        {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
+        {selectedCharacter !== null && viewMode === 'game' && <GameContainer selectedCharacter={selectedCharacter} gameData={gameData} setGameOver={() => setViewMode('gameOver')}/>}
+        {viewMode === 'leaderBoard' && <LeaderBoard />}
+        {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
+      </div>
       <Footer />
     </div>
   );
