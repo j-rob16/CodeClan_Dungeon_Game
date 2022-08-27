@@ -4,4 +4,11 @@
   text-align: center;
   margin: 1rem;
   background-color: antiquewhite;
+  background-color: slategray;
+  display: flex;
+  flex-direction: column;
+}
+
+.options {
+  display: grid;
 }
