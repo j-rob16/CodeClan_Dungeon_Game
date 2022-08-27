@@ -1,11 +1,27 @@
 .main{
-  border: 1px black solid;
+  border: 0.5px black solid;
   padding: 1rem;
   text-align: center;
   margin: 1rem;
-  background-color: antiquewhite;
+  background-color: slategray;
+  
 }
 
 .startButton {
-  margin: 0.5rem;
+  margin-top: 1rem;
+  border: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100px;
+  margin: 1rem;
+  border-radius: 10px;
+  border: 1px black solid;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  
 }
