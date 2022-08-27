@@ -9,7 +9,7 @@ export const Header = ({viewModeClick}) => {
 
   return (
     <div className={styles.main}>
-      <h2>CodeClan Battles</h2>
+      <h2 className={styles.glow}>CodeClan Battles</h2>
       <HighScoreButton viewModeClick={viewModeClick}/>
     </div>
   )
