@@ -8,7 +8,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 1rem;
 }
 
 /* div:hover {
