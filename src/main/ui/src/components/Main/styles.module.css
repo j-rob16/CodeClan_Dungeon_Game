@@ -1,5 +1,8 @@
 .main{
-  border: 1px black solid;
   text-align: center;
   background-color: grey;
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/beabdffc-1e01-47f0-8988-cde3fd808115/dez45u1-3540fc54-f404-429a-84fe-543d742aa416.png/v1/fill/w_480,h_480,q_80,strp/dungeon_brick_wall__8_bit__by_trarian_dez45u1-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDgwIiwicGF0aCI6IlwvZlwvYmVhYmRmZmMtMWUwMS00N2YwLTg5ODgtY2RlM2ZkODA4MTE1XC9kZXo0NXUxLTM1NDBmYzU0LWY0MDQtNDI5YS04NGZlLTU0M2Q3NDJhYTQxNi5wbmciLCJ3aWR0aCI6Ijw9NDgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.g6iwpNfHd_aZolDJI2ElUNa8il4I85rUwJXITmsqk3g);
+  background-size: 15%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
