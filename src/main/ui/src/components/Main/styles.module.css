@@ -5,4 +5,7 @@
   background-size: 15%;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  min-height: 100%;
+  margin: 0 auto;
+  /* position: absolute; */
 }
