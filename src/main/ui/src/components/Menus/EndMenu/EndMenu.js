@@ -1,11 +1,10 @@
 import styles from './styles.module.css';
 
-import { GameNarrator } from 'components';
-
-export const EndMenu = () => {
-
+export const EndMenu = ({ winner, onStartClick}) => {
   return (
-    <GameNarrator script={'Your journey is over. Did you win or did you lose? We have yet to code that functionality.'}/>
+    <div className={styles.main}>
+      <h2>{winner.name} has won!</h2>
+      <button className={styles.startButton} onClick={onStartClick}>Start Again</button>
+    </div>
   )
-  
 }
