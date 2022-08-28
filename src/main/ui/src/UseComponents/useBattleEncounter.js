@@ -26,8 +26,8 @@ export const useBattleEncounter = ( encounter ) => {
     //   return null
     // }
 
-    setCharacterHealth(character.maxHealth);
-    setEnemyHealth(enemy.maxHealth);
+    // setCharacterHealth(character.maxHealth);
+    // setEnemyHealth(enemy.maxHealth);
 
     if (battleMode) {
       const fighter = turn === 0 ? character : enemy;

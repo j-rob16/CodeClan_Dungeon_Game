@@ -16,18 +16,18 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
 
   const {
     characterHealth,
-    characterCurrentHealth,
+    // characterCurrentHealth,
     enemyHealth,
-    enemyCurrentHealth,
+    // enemyCurrentHealth,
     inEncounter,
     narratorScript,
     turn
   } = useBattleEncounter(encounter);
 
-  useEffect (() => {
-    setEnemyCurrentHealthProp(enemyCurrentHealth);
-    setCharacterCurrentHealthProp(characterCurrentHealth);
-  }, [enemyCurrentHealth, characterCurrentHealth])
+  // useEffect (() => {
+  //   setEnemyCurrentHealthProp(enemyCurrentHealth);
+  //   setCharacterCurrentHealthProp(characterCurrentHealth);
+  // }, [enemyCurrentHealth, characterCurrentHealth])
 
   const aiChoice = useAIOpponent(turn);
 
@@ -38,13 +38,13 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
   }, [turn, aiChoice, inEncounter]);
 
   useEffect(() => {
-    if (characterCurrentHealth === 0 || enemyCurrentHealth === 0) {
+    if (characterHealth === 0 || enemyHealth === 0) {
       (async () => {
         await pause(1000);
         onGameEnd(characterHealth === 0 ? enemy : character);
       })();
     }
-  }, [characterCurrentHealth, enemyCurrentHealth, onGameEnd]);
+  }, [characterHealth, enemyHealth, onGameEnd]);
 
   return (
     <>
