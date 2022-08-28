@@ -6,25 +6,28 @@ import { useAIOpponent, useBattleEncounter } from 'UseComponents';
 import { Character, Enemy, BattleMenu, GameNarrator } from 'components';
 import { pause } from 'SharedComponents';
 
+
+export const character = {name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 30, id: 2, name: "Short Sword"}};
+export const enemy = {exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapon:{damage: 18, id: 2, name: "Short Sword"}};
+
 export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
 
-  const [sequence, setSequence] = useState({});
+  const [encounter, setEncounter] = useState({});
+
 
   const {
-    character,
-    enemy,
     characterHealth,
     enemyHealth,
     inEncounter,
     narratorScript,
     turn
-  } = useBattleEncounter(sequence);
+  } = useBattleEncounter(encounter);
 
   const aiChoice = useAIOpponent(turn);
 
   useEffect(() => {
     if (aiChoice && turn === 1 && !inEncounter) {
-      setSequence({turn, battleMode: aiChoice });
+      setEncounter({turn, battleMode: aiChoice });
     }
   }, [turn, aiChoice, inEncounter]);
 
@@ -32,29 +35,20 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
     if (characterHealth === 0 || enemyHealth === 0) {
       (async () => {
         await pause(1000);
-        onGameEnd(characterHealth === 0 ? character : enemy);
+        onGameEnd(characterHealth === 0 ? enemy : character);
       })();
     }
   }, [characterHealth, enemyHealth, onGameEnd]);
 
   return (
     <>
-      {/* <div className={styles.main}>
-    
-        <div className={styles.Enemy}>
-          <div className={styles.summary}>
-            <Character 
-              selectedCharacter={gameData[3][0].enemy}
-            />
-          </div>
-        </div> */}
-
+      
         <div className={styles.main}>
             
             <div className={styles.Enemy}>
               <div className={styles.summary}>
                 <Enemy 
-                  enemy={gameData[3][0].enemy}
+                  enemy={enemy} health={enemyHealth}
                 />
               </div>
             </div>
@@ -62,7 +56,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
         <div className={styles.Player}>
           <div className={styles.summary}>
             <Character 
-              character={selectedCharacter}
+              character={character} health={characterHealth}
             />
           </div>
         </div>
@@ -70,14 +64,15 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
         <div>
           <h3>
             <GameNarrator 
-              script={`What will ${selectedCharacter.name} do?`} 
+              script={
+              narratorScript || `What will ${character.name} do?`}
             />
           </h3>
         </div>
         {!inEncounter && turn === 0 && (<div className={styles.BattleMenu}>
           <BattleMenu 
-            onAttack={() => setSequence({ battleMode: 'attack', turn})}
-            onUsePotion={() => setSequence({ battleMode: 'usePotion', turn })}
+            onAttack={() => setEncounter({ battleMode: 'attack', turn})}
+            onUsePotion={() => setEncounter({ battleMode: 'usePotion', turn })}
           />
         </div>)}
         

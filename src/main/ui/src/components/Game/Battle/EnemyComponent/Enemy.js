@@ -4,9 +4,9 @@ import React from 'react';
 import { HealthBar } from '../HealthBar';
 export const Enemy = ({enemy}) => {
 
-  // const character = {selectedCharacter}
 
-  if (enemy=== undefined){
+
+  if (enemy === undefined){
     return null
   }
 

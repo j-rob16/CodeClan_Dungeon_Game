@@ -1,8 +1,9 @@
 import styles from './styles.module.css';
 import React from 'react';
-
 import { HealthBar } from '../HealthBar';
-export const Character = ({character}) => {
+
+
+export const Character = (character) => {
 
   // const character = {selectedCharacter}
 
