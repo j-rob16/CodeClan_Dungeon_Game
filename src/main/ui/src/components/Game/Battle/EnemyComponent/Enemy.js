@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 import React from 'react';
 
 import { HealthBar } from '../HealthBar';
-export const Enemy = ({enemy}) => {
+export const Enemy = ({enemy, health}) => {
 
 
 
@@ -13,7 +13,7 @@ export const Enemy = ({enemy}) => {
     return (
       <div className={styles.main}>
        <div className = {styles.HealthBar}>
-       <HealthBar label ="Health" current ={enemy.health} max = {enemy.maxHealth}   />
+       <HealthBar label ="Health" current ={health} max = {enemy.maxHealth}   />
        <p>{enemy.name}</p>
        </div>
       </div>

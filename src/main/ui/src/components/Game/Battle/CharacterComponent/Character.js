@@ -3,7 +3,7 @@ import React from 'react';
 import { HealthBar } from '../HealthBar';
 
 
-export const Character = (character) => {
+export const Character = ({character, health}) => {
 
   // const character = {selectedCharacter}
 
@@ -14,7 +14,7 @@ export const Character = (character) => {
     return (
       <div className={styles.main}>
        <div className = {styles.HealthBar}>
-       <HealthBar label ="Health" current ={character.health} max = {character.maxHealth}   />
+       <HealthBar label ="Health" current ={health} max = {character.maxHealth}   />
        <p>{character.name}</p>
        </div>
       </div>

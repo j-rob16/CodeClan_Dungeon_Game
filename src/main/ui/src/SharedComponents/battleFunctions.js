@@ -4,6 +4,6 @@ export const attack = ({fighter}) => {
   return damage;
 };
 
-export const usePotion = ({ taker }) => {
-  return taker.currentHealth + 35;
+export const potion = ({ taker }) => {
+  return 35;
 };

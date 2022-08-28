@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react';
-
 import styles from './styles.module.css';
-
+import React, {useEffect, useState} from 'react';
 import { useAIOpponent, useBattleEncounter } from 'UseComponents';
 import { Character, Enemy, BattleMenu, GameNarrator } from 'components';
 import { pause } from 'SharedComponents';
 
 
-export const character = {name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 30, id: 2, name: "Short Sword"}};
+export const character = {name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 60, id: 2, name: "Short Sword"}};
 export const enemy = {exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapon:{damage: 18, id: 2, name: "Short Sword"}};
 
 export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
+
+  // const [ character, setCharacter] = useState({});
 
   const [encounter, setEncounter] = useState({});
 
@@ -48,7 +48,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
             <div className={styles.Enemy}>
               <div className={styles.summary}>
                 <Enemy 
-                  enemy={enemy} health={enemyHealth}
+                  enemy={gameData[3][0].enemy} health={enemyHealth}
                 />
               </div>
             </div>
@@ -56,7 +56,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
         <div className={styles.Player}>
           <div className={styles.summary}>
             <Character 
-              character={character} health={characterHealth}
+              character={selectedCharacter} health={characterHealth}
             />
           </div>
         </div>
@@ -72,7 +72,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
         {!inEncounter && turn === 0 && (<div className={styles.BattleMenu}>
           <BattleMenu 
             onAttack={() => setEncounter({ battleMode: 'attack', turn})}
-            onUsePotion={() => setEncounter({ battleMode: 'usePotion', turn })}
+            onPotion={() => setEncounter({ battleMode: 'usePotion', turn })}
           />
         </div>)}
         
