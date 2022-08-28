@@ -9,7 +9,7 @@ export const StartMenu = ({viewModeClick}) => {
 
   return (
     <div className={styles.main}>
-      Start Menu/Screen
+
       <GameNarrator script={'Are you ready to begin your journey??'} />
 
       {/* <StartGameButton/> */}

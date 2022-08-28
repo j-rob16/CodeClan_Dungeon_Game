@@ -22,11 +22,12 @@ export const CharacterSelect = ({playersData, onCharacterClick, viewModeClick}) 
 
   return (
     <div className={styles.main}>
-      Character Selection Screen
       <h3>
         <GameNarrator script={'Choose your Hero!'} />
       </h3>
+      <div className={styles.options}>
       {playerList}
+      </div>
     </div>
   );
 };

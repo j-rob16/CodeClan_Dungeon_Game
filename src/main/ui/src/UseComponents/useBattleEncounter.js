@@ -26,6 +26,9 @@ export const useBattleEncounter = ( encounter ) => {
     //   return null
     // }
 
+    setCharacterHealth(character.maxHealth);
+    setEnemyHealth(enemy.maxHealth);
+
     if (battleMode) {
       const fighter = turn === 0 ? character : enemy;
       const defender = turn === 0 ? enemy : character;
@@ -35,6 +38,7 @@ export const useBattleEncounter = ( encounter ) => {
           const damage = attack({ fighter, defender });
 
           (async () => {
+
             // console.log(fighter + defender);
             // console.log("step1")
             setInEncounter(true);
@@ -46,6 +50,7 @@ export const useBattleEncounter = ( encounter ) => {
               ? setEnemyHealth(h => (h - damage > 0 ? h - damage : 0))
               : setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
             await pause(750);
+
 
             console.log("step3")
             setNarratorScript(`${defender.name} responds!`);
@@ -93,6 +98,7 @@ export const useBattleEncounter = ( encounter ) => {
             setTurn(turn === 0 ? 1 : 0);
             setInEncounter(false);
               
+
           })();
           break;
         }
@@ -105,3 +111,4 @@ export const useBattleEncounter = ( encounter ) => {
     turn, inEncounter, characterHealth, enemyHealth, narratorScript
   };
 };
+

@@ -8,13 +8,15 @@ export const CharacterOption = ({player, onClick, viewModeClick}) => {
   }
 
   return (
-      <div className={styles.main}>
-        <p>Name: {player.name}</p>
-        <p>Class: {player.characterClass}</p>
-        <p>Weapon: {player.weapon.name}</p>
+      <div className={styles.main} value='game'>
         <img className={styles.CharacterImage} src="./Images/GolumAttack.png" alt ="load damn it" ></img>
-        {/* <p>Health: {player.maxHealth}</p> */}
-        <button onClick={handleCharacterClick} value='game'>Select Character!</button>
+        <div className={styles.stats}>
+          <p>{player.name}</p>
+          <p>{player.characterClass}</p>
+          <p>Weapon: {player.weapon.name}</p>
+          {/* <p>Health: {player.maxHealth}</p> */}
+        </div>
+        <button className={styles.button} onClick={handleCharacterClick} value='game'>Select Character!</button>
       </div>
   )
 }

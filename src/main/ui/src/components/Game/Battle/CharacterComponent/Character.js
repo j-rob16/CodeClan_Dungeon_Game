@@ -2,7 +2,6 @@ import styles from './styles.module.css';
 import React from 'react';
 import { HealthBar } from '../HealthBar';
 
-
 export const Character = ({character, health}) => {
 
   // const character = {selectedCharacter}
@@ -10,7 +9,6 @@ export const Character = ({character, health}) => {
   if (character === undefined){
     return null
   }
-
     return (
       <div className={styles.main}>
        <div className = {styles.HealthBar}>
@@ -19,5 +17,4 @@ export const Character = ({character, health}) => {
        </div>
       </div>
     );
-   
   };

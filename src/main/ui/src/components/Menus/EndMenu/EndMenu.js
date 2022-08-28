@@ -7,5 +7,4 @@ export const EndMenu = ({ winner, onStartClick}) => {
       <button className={styles.startButton} onClick={onStartClick}>Start Again</button>
     </div>
   )
-  
 }
