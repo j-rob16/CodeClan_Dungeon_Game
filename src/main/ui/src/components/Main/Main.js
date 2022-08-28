@@ -59,23 +59,25 @@ export const Main = () => {
 
   return (
     <div className={styles.main}>
-      <Header viewModeClick={viewModeClick}/>
-      {/* leaderboard or game container conditionally rendered by button click? yar */}
-      {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
-      {selectedCharacter !== null && viewMode === 'game' && <BattleContainer 
-          selectedCharacter={selectedCharacter} 
-          gameData={gameData} 
-          onGameEnd={winner => {
-            setWinner(winner);
-            setViewMode('gameOver');
-          }}
-        />}
-      {viewMode === 'leaderBoard' && <LeaderBoard />}
-      {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
-      {viewMode === 'gameOver' && !!winner && (
-        <EndMenu winner={winner} onStartClick={() => setViewMode('start')}/>
-      )}
-      <Footer />
+      <Header className={styles.header} viewModeClick={viewModeClick}/>
+      <div className={styles.screen}>
+        {/* leaderboard or game container conditionally rendered by button click? yar */}
+        {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
+        {selectedCharacter !== null && viewMode === 'game' && <BattleContainer 
+            selectedCharacter={selectedCharacter} 
+            gameData={gameData} 
+            onGameEnd={winner => {
+              setWinner(winner);
+              setViewMode('gameOver');
+            }}
+          />}
+        {viewMode === 'leaderBoard' && <LeaderBoard />}
+        {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
+        {viewMode === 'gameOver' && !!winner && (
+          <EndMenu winner={winner} onStartClick={() => setViewMode('start')}/>
+        )}
+      </div>
+      <Footer className={styles.footer} />
     </div>
   );
 };
