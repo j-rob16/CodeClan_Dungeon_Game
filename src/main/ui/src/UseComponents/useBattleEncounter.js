@@ -19,16 +19,6 @@ export const useBattleEncounter = ( encounter ) => {
   useEffect (() => {
     const { battleMode, turn } = encounter;
 
-    // if (characterHealth === undefined){
-    //   return null
-    // }
-    // if (enemyHealth === undefined){
-    //   return null
-    // }
-
-    // setCharacterHealth(character.maxHealth);
-    // setEnemyHealth(enemy.maxHealth);
-
     if (battleMode) {
       const fighter = turn === 0 ? character : enemy;
       const defender = turn === 0 ? enemy : character;
@@ -39,13 +29,10 @@ export const useBattleEncounter = ( encounter ) => {
 
           (async () => {
 
-            // console.log(fighter + defender);
-            // console.log("step1")
             setInEncounter(true);
             setNarratorScript(`${fighter.name} attacks!`);
             await pause(750);
 
-            // console.log("step2")
             turn === 0
               ? setEnemyHealth(h => (h - damage > 0 ? h - damage : 0))
               : setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
