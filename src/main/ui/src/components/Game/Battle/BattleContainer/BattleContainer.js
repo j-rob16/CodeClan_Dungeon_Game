@@ -10,24 +10,16 @@ export const enemy = {exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapo
 
 export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
 
-  // const [ character, setCharacter] = useState({});
 
   const [encounter, setEncounter] = useState({});
 
   const {
     characterHealth,
-    // characterCurrentHealth,
     enemyHealth,
-    // enemyCurrentHealth,
     inEncounter,
     narratorScript,
     turn
   } = useBattleEncounter(encounter);
-
-  // useEffect (() => {
-  //   setEnemyCurrentHealthProp(enemyCurrentHealth);
-  //   setCharacterCurrentHealthProp(characterCurrentHealth);
-  // }, [enemyCurrentHealth, characterCurrentHealth])
 
   const aiChoice = useAIOpponent(turn);
 

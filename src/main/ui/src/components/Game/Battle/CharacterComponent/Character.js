@@ -4,8 +4,6 @@ import { HealthBar } from '../HealthBar';
 
 export const Character = ({character, health}) => {
 
-  // const character = {selectedCharacter}
-
   if (character === undefined){
     return null
   }
