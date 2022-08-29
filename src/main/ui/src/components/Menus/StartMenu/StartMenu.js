@@ -10,7 +10,7 @@ export const StartMenu = ({viewModeClick}) => {
   return (
     <div className={styles.main}>
 
-      <GameNarrator script={'Are you ready to begin your journey??'} />
+      <GameNarrator className={styles.narrator} script={'Are you ready to begin your journey??'} />
 
       {/* <StartGameButton/> */}
       <button className={styles.startButton} onClick={handleButtonClick} value='characters'>Start Game</button>
