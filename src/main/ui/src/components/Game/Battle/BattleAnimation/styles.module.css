@@ -3,8 +3,10 @@
    flex-direction: row;
    justify-content: center;
 }
-.characterImage{
-    height: 50;
+.CharacterImage{
+  
+  height: 450px;
+  object-position: top 60px right 10px;
 }
 .EnemyImage {
     transform: scaleX(-1);
