@@ -7,7 +7,7 @@
   /* background-image: url(https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/3ec04946-604a-4011-9e42-027d362fcbb7_scaled.jpg); */
   background-image: url(https://t3.ftcdn.net/jpg/02/96/74/90/360_F_296749091_cBS5tC0ike7Z8UedzPL74nYFRc9Q3rjW.jpg);
   /* background-image: url(https://images.unsplash.com/photo-1597299407241-638aa26e56c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=857&q=80); */
-  
+  width: 80%;
 
   background-size:cover ;
   min-height: 500px;
