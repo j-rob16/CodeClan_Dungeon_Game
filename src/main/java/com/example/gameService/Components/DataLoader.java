@@ -78,6 +78,15 @@ public class DataLoader implements ApplicationRunner {
         BattleEncounter battle1 = new BattleEncounter("First battle", Slug);
         battleEncounterRepository.save(battle1);
 
+        BattleEncounter battle2 = new BattleEncounter("Second Battle", Ogre);
+        battleEncounterRepository.save(battle2);
+
+        BattleEncounter battle3 = new BattleEncounter("Third Battle", Troll);
+        battleEncounterRepository.save(battle3);
+
+        BattleEncounter battle4 = new BattleEncounter("Fourth Battle", Bat);
+        battleEncounterRepository.save(battle4);
+
         LootEncounter loot1 = new LootEncounter("First swag", kodachi);
         lootEncounterRepository.save(loot1);
 
