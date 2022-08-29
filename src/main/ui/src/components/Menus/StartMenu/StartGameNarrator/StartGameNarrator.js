@@ -5,13 +5,13 @@ import styles from './styles.module.css';
 export const StartGameNarrator = ({ script, viewModeClick }) => {
   const scriptedResponse = useScriptedResponse(script);
   
-  const handleButtonClick = (evt) => {
-    viewModeClick(evt.target.value);
+  const handleStartClick = () => {
+    viewModeClick('characters');
   }
 
   return (
     <div className={styles.main}>
-      <div className={styles.script} onClick={handleButtonClick} value='characters'>{scriptedResponse} </div>
+      <div className={styles.script} onClick={handleStartClick}>{scriptedResponse} </div>
     </div>
   );
 };
