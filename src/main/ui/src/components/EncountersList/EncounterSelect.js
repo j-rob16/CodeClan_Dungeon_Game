@@ -12,10 +12,10 @@ export const EncounterSelect = ({encountersData, onEncounterClick, viewModeClick
       return (
         <div className={styles.main1}>
         <EncounterOption
-        encounter={encounter}
-        onClick={onEncounterClick}
-        key={encounter.id}
-        viewModeClick={viewModeClick}
+          encounter={encounter}
+          onClick={onEncounterClick}
+          key={encounter.id}
+          viewModeClick={viewModeClick}
         />
         </div>
       );
@@ -23,9 +23,11 @@ export const EncounterSelect = ({encountersData, onEncounterClick, viewModeClick
   });
 
   return (
+
     <div className={styles.main1}>
+
       <h3>
-        <GameNarrator script={'Choose your path'}/>
+        <GameNarrator className= {styles.GameNarrator} script={'Choose your path'}/>
       </h3>
       <div className={styles.main}>
         {encounterList}

@@ -43,24 +43,26 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
     <>
       
         <div className={styles.main}>
-            
-            <div className={styles.Enemy}>
-           
-              <div className={styles.summary}>
-                <Enemy 
-                  enemy={selectedEncounter.enemy} health={enemyHealth}
+
+          <div className={styles.screen}>
+              <div className={styles.Enemy}>
+                <div className={styles.summary}>
+                  <Enemy 
+                    enemy={selectedEncounter.enemy} health={enemyHealth}
+                  />
+                </div>
+              </div>
+
+              <BattleAnimation characterImage ={characterAnimation} enemyImage={enemyAnimation} />
+
+              <div className={styles.Player}>
+                <div className={styles.summary}>
+                <Character 
+                  character={selectedCharacter} health={characterHealth}
                 />
               </div>
             </div>
-          <BattleAnimation characterImage ={characterAnimation} enemyImage={enemyAnimation} />
-        <div className={styles.Player}>
-          <div className={styles.summary}>
-            <Character 
-              character={selectedCharacter} health={characterHealth}
-            />
           </div>
-        </div>
-       
         <div>
           <h3>
             <GameNarrator 
