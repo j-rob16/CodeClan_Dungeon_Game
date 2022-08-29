@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import React, {useEffect, useState} from 'react';
 import { useAIOpponent, useBattleEncounter } from 'UseComponents';
-import { Character, Enemy, BattleMenu, GameNarrator } from 'components';
+import { Character, Enemy, BattleMenu, GameNarrator, BattleAnimation } from 'components';
 import { pause } from 'SharedComponents';
 
 
@@ -18,7 +18,8 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
     enemyHealth,
     inEncounter,
     narratorScript,
-    turn
+    turn, enemyAnimation,
+    characterAnimation
   } = useBattleEncounter(encounter);
 
   const aiChoice = useAIOpponent(turn);
@@ -44,23 +45,22 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
         <div className={styles.main}>
             
             <div className={styles.Enemy}>
+           
               <div className={styles.summary}>
                 <Enemy 
                   enemy={gameData[3][0].enemy} health={enemyHealth}
                 />
               </div>
             </div>
-
+          <BattleAnimation characterImage ={characterAnimation} enemyImage={enemyAnimation} />
         <div className={styles.Player}>
           <div className={styles.summary}>
             <Character 
-
               character={selectedCharacter} health={characterHealth}
-
             />
           </div>
         </div>
-
+       
         <div>
           <h3>
             <GameNarrator 

@@ -1,0 +1,12 @@
+.main{
+    display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+.characterImage{
+    height: 50;
+}
+.EnemyImage {
+    transform: scaleX(-1);
+    height: 50;
+ }
