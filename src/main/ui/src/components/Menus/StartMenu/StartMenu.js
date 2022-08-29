@@ -1,6 +1,7 @@
 import styles from './styles.module.css';
 import {StartGameButton, HighScoreButton, GameNarrator} from 'components';
 import React from 'react';
+import { StartGameNarrator } from './StartGameNarrator';
 
 export const StartMenu = ({viewModeClick}) => {
 
@@ -11,9 +12,18 @@ export const StartMenu = ({viewModeClick}) => {
   return (
     <div className={styles.main}>
 
-      <GameNarrator className={styles.narrator} script={'Are you ready to begin your journey?'} />
+      {/* <GameNarrator className={styles.text} script={'Are you ready to begin your journey?'} /> */}
       {/* <StartGameButton/> */}
-      <button className={styles.startButton} onClick={handleButtonClick} value='characters'>Start Game Button</button>
+      <StartGameNarrator 
+      script={'Are you ready to begin your journey?'}
+      // onClick={handleButtonClick}
+      viewModeClick={viewModeClick} 
+      value='characters'
+      />
+      
+      <button className={styles.startButton} 
+      onClick={handleButtonClick} 
+      value='characters'>Start Game Button</button>
     </div>
   );
 };
