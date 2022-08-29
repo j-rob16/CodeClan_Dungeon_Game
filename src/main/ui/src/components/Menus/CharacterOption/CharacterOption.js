@@ -16,7 +16,7 @@ export const CharacterOption = ({player, onClick, viewModeClick}) => {
           <p>Weapon: {player.weapon.name}</p>
           {/* <p>Health: {player.maxHealth}</p> */}
         </div>
-        <button className={styles.button} onClick={handleCharacterClick} value='game'>Select Character!</button>
+        <button className={styles.button} onClick={handleCharacterClick} value='encounters'>Select Character!</button>
       </div>
   )
 }
