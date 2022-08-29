@@ -86,7 +86,7 @@ public class DataLoader implements ApplicationRunner {
 
         BattleEncounter battle4 = new BattleEncounter("Fourth Battle", Bat);
         battleEncounterRepository.save(battle4);
-        
+
         LootEncounter loot1 = new LootEncounter("First swag", kodachi);
         lootEncounterRepository.save(loot1);
 
