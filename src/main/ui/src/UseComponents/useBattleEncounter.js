@@ -13,7 +13,7 @@ export const useBattleEncounter = ( encounter ) => {
   const [narratorScript, setNarratorScript] = useState('');
 
   const [enemyAnimation, setEnemyAnimation] =useState("./Images/MinotaurIdle.png");
-  const [characterAnimation, setCharacterAnimation] = useState("./Images/MinotaurIdle.png")
+  const [characterAnimation, setCharacterAnimation] = useState("./Images/WarriorIdle.png")
   // animations here
   // characterAnimation
   // enemy Animation
@@ -36,7 +36,7 @@ export const useBattleEncounter = ( encounter ) => {
             await pause(750);
 
             if(turn ===0){
-              setCharacterAnimation("./Images/MinotaurAttack.png");
+              setCharacterAnimation("./Images/WarriorAttack.png");
               await pause(1000);
               setEnemyAnimation("./Images/MinotaurHurt.png");
               await pause(1000);
@@ -46,7 +46,7 @@ export const useBattleEncounter = ( encounter ) => {
             
               setEnemyAnimation("./Images/MinotaurAttack.png");
               await pause(1000);
-              setCharacterAnimation("./Images/MinotaurHurt.png");
+              setCharacterAnimation("./Images/WarriorHurt.png");
               await pause(1000);
               setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
 
@@ -66,7 +66,7 @@ export const useBattleEncounter = ( encounter ) => {
 
             await pause(1500);
             setEnemyAnimation("./Images/MinotaurIdle.png")
-            setCharacterAnimation("./Images/MinotaurIdle.png")
+            setCharacterAnimation("./Images/WarriorIdle.png")
 
             console.log("step3")
             setNarratorScript(`${defender.name} responds!`);
