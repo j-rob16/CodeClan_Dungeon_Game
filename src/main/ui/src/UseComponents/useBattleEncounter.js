@@ -12,6 +12,8 @@ export const useBattleEncounter = ( encounter ) => {
   const [enemyHealth, setEnemyHealth] =  useState(enemy.maxHealth);
   const [narratorScript, setNarratorScript] = useState('');
 
+  const [enemyAnimation, setEnemyAnimation] =useState("./Images/MinotaurIdle.png");
+  const [characterAnimation, setCharacterAnimation] = useState("./Images/MinotaurIdle.png")
   // animations here
   // characterAnimation
   // enemy Animation
@@ -33,11 +35,38 @@ export const useBattleEncounter = ( encounter ) => {
             setNarratorScript(`${fighter.name} attacks!`);
             await pause(750);
 
-            turn === 0
-              ? setEnemyHealth(h => (h - damage > 0 ? h - damage : 0))
-              : setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
-            await pause(750);
+            if(turn ===0){
+              setCharacterAnimation("./Images/MinotaurAttack.png");
+              await pause(1000);
+              setEnemyAnimation("./Images/MinotaurHurt.png");
+              await pause(1000);
+              setEnemyHealth(h => (h - damage > 0 ? h - damage : 0));
+            }
+            else{
+            
+              setEnemyAnimation("./Images/MinotaurAttack.png");
+              await pause(1000);
+              setCharacterAnimation("./Images/MinotaurHurt.png");
+              await pause(1000);
+              setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
 
+            }
+            // turn === 0
+            //   ? setEnemyHealth(h => (h - damage > 0 ? h - damage : 0))
+            //   : setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
+
+            // turn ===0
+            //   ? setEnemyAnimation("./Images/MinotaurDying.png")
+            //   : setEnemyAnimation("./Images/MinotaurAttack.png")
+             
+            // turn ===0
+            //   ? setCharacterAnimation("./Images/MinotaurAttack.png")
+            //   : setCharacterAnimation("./Images/MinotaurDying.png")
+
+
+            await pause(1500);
+            setEnemyAnimation("./Images/MinotaurIdle.png")
+            setCharacterAnimation("./Images/MinotaurIdle.png")
 
             console.log("step3")
             setNarratorScript(`${defender.name} responds!`);
@@ -95,7 +124,8 @@ export const useBattleEncounter = ( encounter ) => {
   }, [encounter]); //end of use effect whatever sequence is in bracket
 
   return {
-    turn, inEncounter, characterHealth, enemyHealth, narratorScript
+    turn, inEncounter, characterHealth, enemyHealth, narratorScript, enemyAnimation
+    ,characterAnimation
   };
 };
 
