@@ -6,10 +6,14 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   min-height: 100%;
-  margin: 0 auto;
-  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .screen {
-
+  width: 80%;
+  height: 600px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
 }

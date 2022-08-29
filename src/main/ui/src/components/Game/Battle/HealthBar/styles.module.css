@@ -6,10 +6,11 @@
     align-items: center;
     background-color: white;
     border: black solid;
+    scale: 80%;
   }
   
   .label {
-    font-size: 32px;
+    font-size: 1.5rem;
     font-weight: bold;
     height: 35px;
     display: flex;

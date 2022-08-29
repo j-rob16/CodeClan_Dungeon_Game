@@ -25,3 +25,7 @@
   cursor: pointer;
   box-shadow: 5px, 10px;
 }
+
+.image {
+  height: 50px
+}
