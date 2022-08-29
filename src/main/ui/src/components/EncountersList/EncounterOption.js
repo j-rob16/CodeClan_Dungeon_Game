@@ -18,7 +18,9 @@ export const EncounterOption = ({encounter, onClick, viewModeClick}) => {
       <button 
         className={styles.button} 
         onClick={handleEncounterClick} 
-        value='game'><GiCaveEntrance className={styles.image}/>
+        value='game'
+        >
+          {/* <GiCaveEntrance className={styles.image}/> */}
       </button>
     </div>
   )
