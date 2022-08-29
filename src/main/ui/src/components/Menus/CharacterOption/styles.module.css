@@ -13,9 +13,11 @@
   margin-bottom: 1rem;
 }
 
-/* div:hover {
+.main:hover {
   cursor: pointer;
-} */
+  transform: rotate(359.5deg);
+  box-shadow: 5px 5px 5px black;
+}
 
 .button {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
