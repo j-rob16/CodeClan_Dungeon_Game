@@ -2,8 +2,15 @@
     border: 1px black solid;
     padding: 1rem;
     text-align: center;
-    margin: 1.5rem;
+    margin: auto;
     border-radius: 5px;
     font-size: larger;
     background-color: white;
+    scale: 80%;
+  }
+
+  .name {
+    text-align: left;
+    margin: auto;
+    font-size: larger;
   }

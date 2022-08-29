@@ -5,8 +5,10 @@
 }
 .characterImage{
     height: 50;
+    scale: 70%;
 }
 .EnemyImage {
     transform: scaleX(-1);
     height: 50;
+    scale: 70%;
  }

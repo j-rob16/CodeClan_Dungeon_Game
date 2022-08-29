@@ -11,7 +11,7 @@ export const Enemy = ({enemy, health}) => {
       <div className={styles.main}>
        <div className = {styles.HealthBar}>
        <HealthBar label ="Health" current ={health} max = {enemy.maxHealth}   />
-       <p>{enemy.name}</p>
+       <p className={styles.name}>{enemy.name}</p>
        </div>
       </div>
     );
