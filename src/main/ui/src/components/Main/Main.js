@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
-import { Header, LeaderBoard, Footer, StartMenu, EndMenu, BattleContainer, CharacterSelect } from 'components';
+import { Header, LeaderBoard, Footer, StartMenu, EndMenu, BattleContainer, CharacterSelect, EncounterSelect} from 'components';
 
 export const Main = () => {
   const [viewMode, setViewMode] = useState('start');
   const [gameData, setGameData] = useState([]);
   const [playersData, setPlayersData] = useState(null);
+  const [encountersData, setEncountersData] = useState(null);
   const [winner, setWinner] = useState(null);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [selectedEncounter, setSelectedEncounter] = useState(null);
   
   const getGameData = () =>
     Promise.all([
@@ -41,8 +43,16 @@ export const Main = () => {
     setPlayersData(gameData[0]);
   }
 
+  async function setAllEncounterData() {
+    setEncountersData(gameData[3]);
+  }
+
   useEffect(() => {
     setAllGameData();
+  }, [gameData])
+
+  useEffect(() => {
+    setAllEncounterData();
   }, [gameData])
 
   const viewModeClick = (string) => {
@@ -62,17 +72,19 @@ export const Main = () => {
       <Header viewModeClick={viewModeClick}/>
       {/* leaderboard or game container conditionally rendered by button click? yar */}
       {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
-      {selectedCharacter !== null && viewMode === 'game' && <BattleContainer 
+      {viewMode === 'encounters' && <EncounterSelect encountersData={encountersData} viewModeClick={viewModeClick} onEncounterClick={setSelectedEncounter}/>}
+      {selectedCharacter !== null && selectedEncounter !== null && viewMode === 'game' && <BattleContainer 
           selectedCharacter={selectedCharacter} 
+          selectedEncounter={selectedEncounter}
           gameData={gameData} 
           onGameEnd={winner => {
             setWinner(winner);
-            setViewMode('gameOver');
+            setViewMode('encounters');
           }}
         />}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
       {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
-      {viewMode === 'gameOver' && !!winner && (
+      {viewMode === 'encounters' && !!winner && (
         <EndMenu winner={winner} onStartClick={() => setViewMode('start')}/>
       )}
       <Footer />

@@ -8,7 +8,7 @@ import { pause } from 'SharedComponents';
 export const character = {name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 60, id: 2, name: "Short Sword"}};
 export const enemy = {exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapon:{damage: 18, id: 2, name: "Short Sword"}};
 
-export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
+export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData, onGameEnd}) => {
 
 
   const [encounter, setEncounter] = useState({});
@@ -46,7 +46,7 @@ export const BattleContainer = ({selectedCharacter, gameData, onGameEnd}) => {
             <div className={styles.Enemy}>
               <div className={styles.summary}>
                 <Enemy 
-                  enemy={gameData[3][0].enemy} health={enemyHealth}
+                  enemy={selectedEncounter.enemy} health={enemyHealth}
                 />
               </div>
             </div>
