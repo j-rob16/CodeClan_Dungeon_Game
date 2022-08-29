@@ -10,14 +10,12 @@ export const EncounterSelect = ({encountersData, onEncounterClick, viewModeClick
       return null;
     } else {
       return (
-        <div className={styles.main1}>
         <EncounterOption
           encounter={encounter}
           onClick={onEncounterClick}
           key={encounter.id}
           viewModeClick={viewModeClick}
         />
-        </div>
       );
     }
   });

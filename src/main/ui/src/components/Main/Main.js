@@ -10,6 +10,7 @@ export const Main = () => {
   const [winner, setWinner] = useState(null);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [selectedEncounter, setSelectedEncounter] = useState(null);
+  const [encountersCounter, setEncountersCounter] = useState(0);
   
   const getGameData = () =>
     Promise.all([
@@ -59,6 +60,10 @@ export const Main = () => {
     setViewMode(string);
   }
 
+  const incrementEncounterCounter = () => {
+    setEncountersCounter( encountersCounter + 1)
+  };
+
   useEffect(() => {
     if (viewMode === 'game'){
       setWinner(undefined);
@@ -79,6 +84,7 @@ export const Main = () => {
           selectedEncounter={selectedEncounter}
           gameData={gameData} 
           onGameEnd={winner => {
+            incrementEncounterCounter();
             setWinner(winner);
             setViewMode('encounters');
           }}
