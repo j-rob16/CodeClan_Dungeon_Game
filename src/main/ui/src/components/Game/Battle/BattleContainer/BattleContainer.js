@@ -53,7 +53,8 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
                 </div>
               </div>
 
-              <BattleAnimation characterImage ={characterAnimation} enemyImage={enemyAnimation} />
+              <BattleAnimation characterImage ={characterAnimation} character={selectedCharacter} 
+                  enemyImage={enemyAnimation} enemy={selectedEncounter.enemy}/>
 
               <div className={styles.Player}>
                 <div className={styles.summary}>

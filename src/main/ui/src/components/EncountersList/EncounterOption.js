@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { GiCaveEntrance } from 'react-icons/gi'
+// import { GiCaveEntrance } from 'react-icons/gi'
 
 
 export const EncounterOption = ({encounter, onClick, viewModeClick}) => {
@@ -20,7 +20,7 @@ export const EncounterOption = ({encounter, onClick, viewModeClick}) => {
         onClick={handleEncounterClick} 
         value='game'
         >
-          <GiCaveEntrance className={styles.image} onClick={handleEncounterClick} value='game'/>
+          {/* <GiCaveEntrance className={styles.image} onClick={handleEncounterClick} value='game'/> */}
       </button>
     </div>
   )

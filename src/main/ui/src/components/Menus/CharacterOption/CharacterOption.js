@@ -6,7 +6,10 @@ export const CharacterOption = ({player, onClick, viewModeClick}) => {
     onClick(player);
     viewModeClick('encounters');
   }
-  const type =player.characterClass;
+let type = "";
+  player.name === "Kevin"? type = "Warrior" : type ="Dwarf";
+  
+  //const type =player.characterClass;//  dosent work for "dwarven axemaster" due to the whitespace
   return (
     
       <div className={styles.main} onClick={handleCharacterClick} value='encounters'>
@@ -15,7 +18,7 @@ export const CharacterOption = ({player, onClick, viewModeClick}) => {
           <p>{player.name}</p>
           <p>{player.characterClass}</p>
           <p>Weapon: {player.weapon.name}</p>
-          {/* <p>Health: {player.maxHealth}</p> */}
+          <p>Health: {player.maxHealth}</p>
         </div>
         {/* <button className={styles.button} onClick={handleCharacterClick} value='encounters'>Select Character!</button> */}
       </div>

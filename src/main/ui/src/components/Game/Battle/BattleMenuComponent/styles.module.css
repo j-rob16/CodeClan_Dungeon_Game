@@ -19,7 +19,7 @@
   width: 100px;
   margin: 1rem;
   border-radius: 10px;
-  border: 1px black solid;
+  /* border: 1px black solid; */
   padding: 0.5rem;
   text-align: center;
   cursor: pointer;
@@ -28,4 +28,12 @@
 
 .image {
   height: 50px
+}
+.Attackimage {
+  height: 80px;
+  width: 120px;
+}
+.HealImage{
+  height: 80px;
+  width: 120px;
 }
