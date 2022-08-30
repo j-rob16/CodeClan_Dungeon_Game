@@ -105,7 +105,7 @@ export const Main = () => {
             setViewMode('encounters');
           }}
         />}
-      {viewMode === 'boss' && <BossContainer selectedCharacter={selectedCharacter} bossEncounter={bossEncounter}/>}
+      {viewMode === 'boss' && <BossContainer selectedCharacter={selectedCharacter} bossEncounter={bossEncounter[0]}/>}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
       {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
       {viewMode === 'encounters' && !!winner && (
