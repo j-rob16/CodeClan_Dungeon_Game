@@ -1,12 +1,14 @@
 import styles from './styles.module.css';
 import { GiCaveEntrance } from 'react-icons/gi'
+import { useState } from 'react';
 
 
-export const EncounterOption = ({encounter, onClick, viewModeClick}) => {
+export const EncounterOption = ({encounter, onClick, viewModeClick, addCompletedEncounter}) => {
 
   function handleEncounterClick(evt){
     onClick(encounter);
     viewModeClick('game')
+    addCompletedEncounter(encounter.id)
   }
 
   return (

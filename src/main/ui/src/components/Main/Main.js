@@ -13,6 +13,7 @@ export const Main = () => {
   const [selectedEncounter, setSelectedEncounter] = useState(null);
   const [encountersCounter, setEncountersCounter] = useState(0);
   const [bossEncounter, setBossEncounter] = useState(null);
+  const [completedEncounters, setCompletedEncounters] = useState([]);
   
   const getGameData = () =>
     Promise.all([
@@ -54,6 +55,10 @@ export const Main = () => {
     setBossEncounter(gameData[4]);
   }
 
+  async function addCompletedEncounter(id){
+    completedEncounters.push(id)
+  }
+
   useEffect(() => {
     setAllGameData();
   }, [gameData])
@@ -73,6 +78,7 @@ export const Main = () => {
   const incrementEncounterCounter = () => {
     setEncountersCounter( encountersCounter + 1)
   };
+
 
   useEffect(() => {
     if (viewMode === 'game'){
@@ -94,7 +100,12 @@ export const Main = () => {
       <Header viewModeClick={viewModeClick}/>
       {/* leaderboard or game container conditionally rendered by button click? yar */}
       {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
-      {viewMode === 'encounters' && <EncounterSelect encountersData={encountersData} viewModeClick={viewModeClick} onEncounterClick={setSelectedEncounter}/>}
+      {viewMode === 'encounters' && <EncounterSelect encountersData={encountersData}
+        viewModeClick={viewModeClick}
+        onEncounterClick={setSelectedEncounter}
+        addCompletedEncounter={addCompletedEncounter}
+        completedEncounters={completedEncounters}/>}
+
       {selectedCharacter !== null && selectedEncounter !== null && viewMode === 'game' && <BattleContainer 
           selectedCharacter={selectedCharacter} 
           selectedEncounter={selectedEncounter}
