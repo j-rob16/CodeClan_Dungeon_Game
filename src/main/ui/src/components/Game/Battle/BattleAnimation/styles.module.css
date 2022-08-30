@@ -1,22 +1,21 @@
 .main{
-    display: flex;
-   flex-direction: row;
-   justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.CharacterImage{
+.characterImage{
   
-  height: 450px;
-  object-position: top 60px right -70px;
-  scale: 80%;
 
-/* .characterImage{
-    height: 50;
-    scale: 70%; */
+  height: 20rem;
+  scale: 70%;
+  object-position: top 60px right 10px;
+
+
 
 }
 .EnemyImage {
     transform: scaleX(-1);
-    height: 50;
+    height: 20rem;
     scale: 70%;
  }

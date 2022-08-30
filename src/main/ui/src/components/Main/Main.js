@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { Header, LeaderBoard, Footer, StartMenu, EndMenu, BattleContainer, CharacterSelect, EncounterSelect} from 'components';
+import { BossContainer } from 'components/Game/Battle/BossContainer';
 
 export const Main = () => {
   const [viewMode, setViewMode] = useState('start');
@@ -11,6 +12,7 @@ export const Main = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [selectedEncounter, setSelectedEncounter] = useState(null);
   const [encountersCounter, setEncountersCounter] = useState(0);
+  const [bossEncounter, setBossEncounter] = useState(null);
   
   const getGameData = () =>
     Promise.all([
@@ -48,12 +50,20 @@ export const Main = () => {
     setEncountersData(gameData[3]);
   }
 
+  async function setMainBossEncounter(){
+    setBossEncounter(gameData[4]);
+  }
+
   useEffect(() => {
     setAllGameData();
   }, [gameData])
 
   useEffect(() => {
     setAllEncounterData();
+  }, [gameData])
+
+  useEffect(() =>{
+    setMainBossEncounter();
   }, [gameData])
 
   const viewModeClick = (string) => {
@@ -69,6 +79,12 @@ export const Main = () => {
       setWinner(undefined);
     }
   }, [viewMode]);
+
+  useEffect(()=> {
+    if (encountersCounter === 3){
+      setViewMode('boss')
+      }
+  }, [viewMode])
 
   // state for leaderboard or gamecontainer to render either component ??
 
@@ -89,6 +105,7 @@ export const Main = () => {
             setViewMode('encounters');
           }}
         />}
+      {viewMode === 'boss' && <BossContainer selectedCharacter={selectedCharacter} bossEncounter={bossEncounter[0]}/>}
       {viewMode === 'leaderBoard' && <LeaderBoard />}
       {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
       {viewMode === 'encounters' && !!winner && (
