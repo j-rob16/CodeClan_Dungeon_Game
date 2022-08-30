@@ -1,25 +1,24 @@
 .main{
   display: flex;
-  border: 1px black solid;
-  padding: 1rem;
+  padding-right: 1rem;
   justify-content: center;
   text-align: center;
   justify-content: right;
-  background-color: white;
   }
 
 .menuButton {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: dodgerblue;
-  background-color: aliceblue;
+  /* color: dodgerblue; */
+  background-color: rgba(255, 255, 255, 0.2);
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  height: 60px;
+  justify-content: center;
+  height: 100px;
   width: 100px;
   margin: 1rem;
-  border-radius: 10px;
-  border: 1px black solid;
+  border-radius: 20px;
+  /* border: 1px solid white; */
   padding: 0.5rem;
   text-align: center;
   cursor: pointer;
@@ -27,5 +26,25 @@
 }
 
 .image {
-  height: 50px
+  height: 80px;
+  width: 80px;
+  transform: scaleX(-1);
+}
+
+.image:hover {
+  transform: rotate(350deg);
+}
+
+.image:nth-child(1):hover {
+  transform: rotate(180deg);
+}
+
+.menuButton:hover {
+  /* border: 1px solid black; */
+  color: white;
+  cursor: pointer;
+}
+
+.menuButton:nth-child(2):hover {
+  color: red
 }

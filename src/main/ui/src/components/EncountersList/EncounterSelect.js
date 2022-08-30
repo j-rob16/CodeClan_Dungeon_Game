@@ -24,8 +24,9 @@ export const EncounterSelect = ({encountersData, onEncounterClick, viewModeClick
 
     <div className={styles.main1}>
 
-      <h3>
-        <GameNarrator className= {styles.GameNarrator} script={'Choose your path'}/>
+      <h3 className={styles.title}>
+        {/* <GameNarrator className={styles.GameNarrator} script={'Choose your path'}/> */}
+        Choose Your Path!
       </h3>
       <div className={styles.main}>
         {encounterList}
