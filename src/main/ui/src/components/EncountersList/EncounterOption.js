@@ -6,7 +6,7 @@ export const EncounterOption = ({encounter, onClick, viewModeClick}) => {
 
   function handleEncounterClick(evt){
     onClick(encounter);
-    viewModeClick(evt.target.value)
+    viewModeClick('game')
   }
 
   return (
@@ -20,7 +20,7 @@ export const EncounterOption = ({encounter, onClick, viewModeClick}) => {
         onClick={handleEncounterClick} 
         value='game'
         >
-          {/* <GiCaveEntrance className={styles.image}/> */}
+          <GiCaveEntrance className={styles.image} onClick={handleEncounterClick} value='game'/>
       </button>
     </div>
   )
