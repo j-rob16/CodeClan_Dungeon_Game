@@ -43,20 +43,17 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
   return (
     <>
         {/* <div className={styles.main}> */}
-
           {/* Grid container */}
           <div className={styles.screen}>
-
                         {/* Game Narrator */}
               <div className={styles.narrator}>
                 <h3>
                   <GameNarrator 
                     script={
-                    narratorScript || `What will ${character.name} do?`}
+                    narratorScript || `What will ${selectedCharacter.name} do?`}
                   />
                 </h3>
               </div>
-              
               {/* Enemy health bar */}
               <div className={styles.enemy}>
                 <div className={styles.summary}>
@@ -64,23 +61,19 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
                     enemy={selectedEncounter.enemy} health={enemyHealth}
                   />
                 </div>
-
+              </div>
               {/* Both characters */}
               <div className={styles.animation} >
                 <BattleAnimation characterImage={characterAnimation} enemyImage={enemyAnimation} />
               </div>
-
               {/* Player health bar */}
                 <div className={styles.player}>
                   <Character 
                     character={selectedCharacter} health={characterHealth}
                   />
                 </div>
-
             {/* battle menu */}
             <div className={styles.menu}>
-
-
               {/* Battle menu */}
               {!inEncounter && turn === 0 && (<div >
                 <BattleMenu 
@@ -89,9 +82,7 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
                 />
               </div>)}
             </div>
-
           </div>
-        
       {/* </div> */}
     </>
   );
