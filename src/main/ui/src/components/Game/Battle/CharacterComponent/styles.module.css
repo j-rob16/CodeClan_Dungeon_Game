@@ -1,9 +1,7 @@
 .main{
-    /* border: 1px black solid; */
-    padding: 1rem;
+    padding-left: 0;
     text-align: center;
     margin: auto;
-    border-radius: 5px;
     font-size: larger;
     background-color: transparent;
     scale: 80%;
@@ -12,6 +10,12 @@
   .name {
     text-align: left;
     margin: auto;
+    padding-left: 45px;
     font-size: xx-large;
     color: white;
+  }
+
+  .healthbar {
+    /* justify-content: flex-start; */
+    min-width: 500px;
   }

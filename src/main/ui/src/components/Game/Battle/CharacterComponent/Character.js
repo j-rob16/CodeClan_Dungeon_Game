@@ -9,10 +9,10 @@ export const Character = ({character, health}) => {
   }
     return (
       <div className={styles.main}>
-       <p className={styles.name}>{character.name}</p>
-       <div className = {styles.HealthBar}>
-       <HealthBar label ="Health" current ={health} max = {character.maxHealth}   />
-       </div>
+        <p className={styles.name}>{character.name}</p>
+        <div className={styles.healthbar}>
+          <HealthBar label="HP" current={health} max={character.maxHealth}   />
+        </div>
       </div>
     );
   };

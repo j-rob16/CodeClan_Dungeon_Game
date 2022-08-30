@@ -1,9 +1,9 @@
-import styles from './styles.module.css';
 import React, {useEffect, useState} from 'react';
 import { useAIOpponent, useBattleEncounter } from 'UseComponents';
 import { Character, Enemy, BattleMenu, GameNarrator, BattleAnimation } from 'components';
 import { pause } from 'SharedComponents';
 
+import styles from './styles.module.css';
 
 export const character = {name:"Kevin", maxHealth:100, characterClass:"Warrior", exp:0, level:1, weapon:{damage: 60, id: 2, name: "Short Sword"}};
 export const enemy = {exp:50, level:1, maxHealth:100, name:"Sam the Slug", weapon:{damage: 18, id: 2, name: "Short Sword"}};
@@ -41,11 +41,23 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
 
   return (
     <>
-      
-        <div className={styles.main}>
+        {/* <div className={styles.main}> */}
 
+          {/* Grid container */}
           <div className={styles.screen}>
-              <div className={styles.Enemy}>
+
+                        {/* Game Narrator */}
+              <div className={styles.narrator}>
+                <h3>
+                  <GameNarrator 
+                    script={
+                    narratorScript || `What will ${character.name} do?`}
+                  />
+                </h3>
+              </div>
+              
+              {/* Enemy health bar */}
+              <div className={styles.enemy}>
                 <div className={styles.summary}>
                   <Enemy 
                     enemy={selectedEncounter.enemy} health={enemyHealth}
@@ -53,34 +65,35 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
                 </div>
               </div>
 
-              <BattleAnimation characterImage ={characterAnimation} enemyImage={enemyAnimation} />
-
-              <div className={styles.Player}>
-                <div className={styles.summary}>
-                <Character 
-                  character={selectedCharacter} health={characterHealth}
-                />
+              {/* Both characters */}
+              <div className={styles.animation} >
+                <BattleAnimation characterImage={characterAnimation} enemyImage={enemyAnimation} />
               </div>
+
+              {/* Player health bar */}
+                <div className={styles.player}>
+                  <Character 
+                    character={selectedCharacter} health={characterHealth}
+                  />
+                </div>
+
+            {/* battle menu */}
+            <div className={styles.menu}>
+
+
+              {/* Battle menu */}
+              {!inEncounter && turn === 0 && (<div >
+                <BattleMenu 
+                  onAttack={() => setEncounter({ battleMode: 'attack', turn})}
+                  onPotion={() => setEncounter({ battleMode: 'usePotion', turn })}
+                />
+              </div>)}
             </div>
+
           </div>
-        <div>
-          <h3>
-            <GameNarrator 
 
-              script={
-              narratorScript || `What will ${character.name} do?`}
-
-            />
-          </h3>
-        </div>
-        {!inEncounter && turn === 0 && (<div className={styles.BattleMenu}>
-          <BattleMenu 
-            onAttack={() => setEncounter({ battleMode: 'attack', turn})}
-            onPotion={() => setEncounter({ battleMode: 'usePotion', turn })}
-          />
-        </div>)}
         
-      </div>
+      {/* </div> */}
     </>
   );
 };
