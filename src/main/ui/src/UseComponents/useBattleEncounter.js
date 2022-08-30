@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
 import { pause } from "SharedComponents";
 import { attack, potion } from "SharedComponents/battleFunctions";
-import { character, enemy} from "components/Game/Battle/BattleContainer";
+// import { character, enemy} from "components/Game/Battle/BattleContainer";
 
 
 
-export const useBattleEncounter = ( encounter ) => {
+export const useBattleEncounter = ( encounter, character, enemy ) => {
   const [turn, setTurn] = useState(0);
   const [inEncounter, setInEncounter] = useState(false);
   const [characterHealth, setCharacterHealth] = useState(character.maxHealth);
   const [enemyHealth, setEnemyHealth] =  useState(enemy.maxHealth);
   const [narratorScript, setNarratorScript] = useState('');
-
   const [enemyAnimation, setEnemyAnimation] =useState("./Images/MinotaurIdle.png");
   const [characterAnimation, setCharacterAnimation] = useState("./Images/WarriorIdle.png")
   // animations here

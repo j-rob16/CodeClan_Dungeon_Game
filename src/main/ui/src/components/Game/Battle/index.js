@@ -4,3 +4,4 @@ export * from './BattleMenuComponent';
 export * from './BattleContainer';
 export * from './EnemyComponent'
 export * from './BattleAnimation';
+export * from './BossContainer';
