@@ -20,12 +20,12 @@ export const EncounterSelect = ({encountersData, onEncounterClick, viewModeClick
         } else {
           return (
             <EncounterOption 
-            encounter={encounter}
-            onClick={onEncounterClick}
-            key={encounter.id}
-            viewModeClick={viewModeClick}
-            addCompletedEncounter={addCompletedEncounter}
-          /> )
+              encounter={encounter}
+              onClick={onEncounterClick}
+              key={encounter.id}
+              viewModeClick={viewModeClick}
+              addCompletedEncounter={addCompletedEncounter}
+            /> )
         }
 
     }

@@ -12,17 +12,15 @@ export const EncounterOption = ({encounter, onClick, viewModeClick, addCompleted
   }
 
   return (
-    <div className={styles.option} value = 'game'>
-      {/* <div className={styles.main}>
-        <p>{encounter.name}</p>
-        <p>Enemy: {encounter.enemy.name}</p>
-      </div>  */}
+    <div value='game'>
       <button 
-        className={styles.button} 
+        className={styles.option} 
         onClick={handleEncounterClick} 
         value='game'
         >
-          <GiCaveEntrance className={styles.image} onClick={handleEncounterClick} value='game'/>
+          <img src="/Images/AvailableLvl.png" alt="Available Level" height="100px" />
+          {/* <img className={styles.completedImage} src="/Images/LockLvl.png" alt="Locked level" height="100px"/> */}
+          {/* <GiCaveEntrance className={styles.image} onClick={handleEncounterClick} value='game'/> */}
       </button>
     </div>
   )

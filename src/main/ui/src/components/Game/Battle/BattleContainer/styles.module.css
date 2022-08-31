@@ -9,7 +9,6 @@
 }
 
 .screen {
-  /* background-image: url(https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/3ec04946-604a-4011-9e42-027d362fcbb7_scaled.jpg); */
   background-image: url(../../../../../public/Images/game_background_1.png);
   background-size: cover;
   display: grid;
