@@ -5,7 +5,7 @@ import { GameNarrator } from 'components/Narrator';
 
 export const CharacterSelect = ({playersData, onCharacterClick, viewModeClick}) => {
 
-  const playerList = playersData.map((player, index) => {
+  const playerList = playersData.map((player) => {
     if (playersData === null) {
       return null;
     } else {
@@ -25,9 +25,9 @@ export const CharacterSelect = ({playersData, onCharacterClick, viewModeClick}) 
       <h3>
         <GameNarrator script={'Choose your Hero!'} />
       </h3>
-      <div className={styles.options}>
-      {playerList}
-      </div>
+        <div className={styles.cards}>
+          {playerList}
+        </div>
     </div>
   );
 };
