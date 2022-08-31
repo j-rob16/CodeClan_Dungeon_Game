@@ -1,23 +1,57 @@
 .main{
-    border: 1px black solid;
-    padding: 1rem;
-    text-align: center;
-    background-color: black;
-    border-radius: 4px;
-
-/*     background: url(/public/Images/game_background_1.png);
-    background-position: center;
-    background-size: 1500px; */
-   
-   
-
-    /* background-image: url(https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/3ec04946-604a-4011-9e42-027d362fcbb7_scaled.jpg); */
-    background-size:cover;
-    width: 80%;
+  border: 1px black solid;
+  padding: 1rem;
+  text-align: center;
+  background-color: black;
+  border-radius: 4px;
+  /* background-image: url(https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/3ec04946-604a-4011-9e42-027d362fcbb7_scaled.jpg); */
+  background-size: cover;
+  width: 100%;
+  display: flex;
   }
 
   .screen {
-    background-image: url(https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/3ec04946-604a-4011-9e42-027d362fcbb7_scaled.jpg);
-    background-size: cover;
-
+  background-image: url(../../../../../public/Images/game_background_1.png);
+  background-size: cover;
+  display: grid;
+  grid-template-areas: "enemy enemy enemy"
+                      "narrator space space"
+                      "animation animation animation"
+                      "player player battlemenu";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: minmax(1fr 4fr 1fr);
+  width: 100%;
+  justify-content: center;
   }
+
+.enemy {
+  justify-content: center;
+  grid-area: enemy;
+  width: 100%;
+}
+
+.animation {
+  display: flex;
+  justify-content: center;
+  grid-area: animation
+}
+
+.player {
+  display: flex;
+  grid-area: player;
+  justify-content: flex-start;
+  position: static;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  grid-area: battlemenu;
+}
+
+.narrator {
+  display: flex;
+  margin: 30px 0 0 30px;
+  grid-area: narrator;
+  justify-content: center;
+}
