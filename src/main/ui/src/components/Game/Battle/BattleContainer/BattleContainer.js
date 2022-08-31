@@ -45,7 +45,7 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
         {/* <div className={styles.main}> */}
           {/* Grid container */}
           <div className={styles.screen}>
-                        {/* Game Narrator */}
+              {/* Game Narrator */}
               <div className={styles.narrator}>
                 <h3>
                   <GameNarrator 
@@ -62,20 +62,23 @@ export const BattleContainer = ({selectedCharacter, selectedEncounter, gameData,
                   />
                 </div>
               </div>
+
               {/* Both characters */}
               <div className={styles.animation} >
                 <BattleAnimation characterImage={characterAnimation} enemyImage={enemyAnimation} />
               </div>
+
               {/* Player health bar */}
-                <div className={styles.player}>
-                  <Character 
-                    character={selectedCharacter} health={characterHealth}
-                  />
-                </div>
+              <div className={styles.player}>
+                <Character 
+                  character={selectedCharacter} health={characterHealth}
+                />
+              </div>
+
             {/* battle menu */}
             <div className={styles.menu}>
               {/* Battle menu */}
-              {!inEncounter && turn === 0 && (<div >
+              {!inEncounter && turn === 0 && (<div>
                 <BattleMenu 
                   onAttack={() => setEncounter({ battleMode: 'attack', turn})}
                   onPotion={() => setEncounter({ battleMode: 'usePotion', turn })}

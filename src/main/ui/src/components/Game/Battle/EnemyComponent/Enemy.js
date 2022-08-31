@@ -9,9 +9,9 @@ export const Enemy = ({enemy, health}) => {
   }
     return (
       <div className={styles.main}>
-        <div className = {styles.healthbar}>
+        <div className={styles.healthbar}>
           <p className={styles.name}>{enemy.name}</p>
-          <HealthBar label ="HP" current ={health} max = {enemy.maxHealth}   />
+          <HealthBar label="HP" current={health} max={enemy.maxHealth} />
         </div>
       </div>
     );

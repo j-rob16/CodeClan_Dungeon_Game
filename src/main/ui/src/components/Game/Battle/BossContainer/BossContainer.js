@@ -39,43 +39,46 @@ export const BossContainer = ({ selectedCharacter, bossEncounter, onGameEnd}) =>
   return (
     <>
       
-        <div className={styles.main}>
-          <div className={styles.screen}>
-              <div className={styles.Enemy}>
-                <div className={styles.summary}>
-                  <Enemy 
-                    enemy={bossEncounter.enemy} health={enemyHealth}
-                  />
-                </div>
-
-              </div>
-              <BattleAnimation characterImage ={characterAnimation} enemyImage={enemyAnimation} />
-              <div className={styles.Player}>
-                <div className={styles.summary}>
-                <Character 
-                  character={selectedCharacter} health={characterHealth}
-                />
-              </div>
-
-            </div>
+      <div className={styles.main}>
+        {/* Grid container */}
+        <div className={styles.screen}>
+          {/* Game Narrator */}
+          <div className={styles.narrator}>
+            <h3>
+              <GameNarrator 
+                script={narratorScript || `What will ${selectedCharacter.name} do?`}
+              />
+            </h3>
           </div>
-        <div>
-          <h3>
-            <GameNarrator 
+          
+          {/* Boss Health Bar */}
+          <div className={styles.enemy}>
+              <Enemy 
+                enemy={bossEncounter.enemy} health={enemyHealth}
+              />
+          </div>
 
-              script={
-              narratorScript || `What will ${selectedCharacter.name} do?`}
+          {/* Both characters */}
+          <div className={styles.animation} >
+            <BattleAnimation characterImage={characterAnimation} enemyImage={enemyAnimation} />
+          </div>
 
+          <div className={styles.player}>
+            <Character 
+              character={selectedCharacter} health={characterHealth}
             />
-          </h3>
+          </div>
+
+          <div className={styles.menu}>
+            {!inEncounter && turn === 0 && (<div>
+              <BattleMenu 
+                onAttack={() => setEncounter({ battleMode: 'attack', turn})}
+                onPotion={() => setEncounter({ battleMode: 'usePotion', turn })}
+              />
+            </div>)}
+          </div>
+
         </div>
-        {!inEncounter && turn === 0 && (<div className={styles.BattleMenu}>
-          <BattleMenu 
-            onAttack={() => setEncounter({ battleMode: 'attack', turn})}
-            onPotion={() => setEncounter({ battleMode: 'usePotion', turn })}
-          />
-        </div>)}
-        
       </div>
     </>
     );
