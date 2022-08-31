@@ -17,18 +17,24 @@
 
 .button {
   margin-top: 1rem;
-  border: 1px white solid;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  border: none;
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: Aboreto, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   color: white;
-  background-color: black;
+  background-color: transparent;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 100px;
+  max-width: 100%;
   margin: 1rem;
-  border-radius: 10px;
   padding: 0.5rem;
   text-align: center;
   cursor: pointer;
+}
+
+.button:hover {
+  text-shadow: 
+  0px 0px 15px rgb(236, 233, 233),
+  0px 0px 0px rgba(0,0,0, 1);
 }

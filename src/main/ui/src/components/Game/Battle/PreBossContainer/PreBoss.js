@@ -1,4 +1,4 @@
-import { GameNarrator } from 'components/Narrator';
+import { StartGameNarrator } from 'components/Menus/StartMenu/StartGameNarrator';
 import React from 'react';
 import styles from './styles.module.css';
 
@@ -6,14 +6,14 @@ export const PreBoss = ({ selectedCharacter, onClick }) => {
   return (
     <div>
       <h3>
-        <GameNarrator
+        <StartGameNarrator className={styles.narrator}
           script={
             'Your journey has lead you to the gates of a greater enemy! '
           }
         />
       </h3>
       <button className={styles.button} onClick={onClick}>
-        Will you proceed?
+        Click to proceed. If you dare...
       </button>
     </div>
   );
