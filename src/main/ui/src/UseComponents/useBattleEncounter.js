@@ -6,17 +6,18 @@ import { attack, potion } from "SharedComponents/battleFunctions";
 
 
 export const useBattleEncounter = ( encounter, character, enemy ) => {
+
   const [turn, setTurn] = useState(0);
   const [inEncounter, setInEncounter] = useState(false);
   const [characterHealth, setCharacterHealth] = useState(character.maxHealth);
   const [enemyHealth, setEnemyHealth] =  useState(enemy.maxHealth);
   const [narratorScript, setNarratorScript] = useState('');
-  const [enemyAnimation, setEnemyAnimation] =useState("./Images/MinotaurIdle.png");
-  const [characterAnimation, setCharacterAnimation] = useState("./Images/WarriorIdle.png")
+  const [enemyAnimation, setEnemyAnimation] =useState('./Images/'+ enemy.type  +'Idle.png');
+  const [characterAnimation, setCharacterAnimation] = useState('./Images/'+character.type +'Idle.png')
   // animations here
   // characterAnimation
   // enemy Animation
-
+console.log(character.type)
   useEffect (() => {
     const { battleMode, turn } = encounter;
 
@@ -32,21 +33,21 @@ export const useBattleEncounter = ( encounter, character, enemy ) => {
 
             setInEncounter(true);
             setNarratorScript(`${fighter.name} attacks!`);
-            await pause(750);
+            await pause(650);
 
             if(turn ===0){
-              setCharacterAnimation("./Images/WarriorAttack.png");
-              await pause(1000);
-              setEnemyAnimation("./Images/MinotaurHurt.png");
-              await pause(1000);
+              setCharacterAnimation('./Images/'+ character.type +'Attack.png');
+              await pause(600);
+              setEnemyAnimation('./Images/' +enemy.type +'Hurt.png');
+              await pause(600);
               setEnemyHealth(h => (h - damage > 0 ? h - damage : 0));
             }
             else{
             
-              setEnemyAnimation("./Images/MinotaurAttack.png");
-              await pause(1000);
-              setCharacterAnimation("./Images/WarriorHurt.png");
-              await pause(1000);
+              setEnemyAnimation('./Images/'+ enemy.type +'Attack.png');
+              await pause(600);
+              setCharacterAnimation('./Images/'+ character.type + 'Hurt.png');
+              await pause(600);
               setCharacterHealth(h => (h - damage > 0 ? h - damage :0));
 
             }
@@ -64,8 +65,8 @@ export const useBattleEncounter = ( encounter, character, enemy ) => {
 
 
             await pause(1500);
-            setEnemyAnimation("./Images/MinotaurIdle.png")
-            setCharacterAnimation("./Images/WarriorIdle.png")
+            setEnemyAnimation('./Images/'+ enemy.type +'Idle.png')
+            setCharacterAnimation('./Images/'+ character.type +'Idle.png')
 
             console.log("step3")
             setNarratorScript(`${defender.name} responds!`);

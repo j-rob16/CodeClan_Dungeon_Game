@@ -6,7 +6,8 @@ export const CharacterOption = ({player, onClick, viewModeClick}) => {
     onClick(player);
     viewModeClick('encounters');
   }
-  const type =player.characterClass;
+  const type =player.type;
+  console.log(player.type)
   return (
     
       <div className={styles.main} onClick={handleCharacterClick} value='encounters'>
