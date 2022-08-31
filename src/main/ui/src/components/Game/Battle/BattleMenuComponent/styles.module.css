@@ -28,15 +28,11 @@
 .image {
   height: 80px;
   width: 80px;
-  transform: scaleX(-1);
-}
-
-.image:hover {
-  transform: rotate(350deg);
 }
 
 .image:nth-child(1):hover {
   transform: rotate(180deg);
+  transform: scaleX(-1);
 }
 
 .menuButton:hover {
@@ -45,6 +41,9 @@
   cursor: pointer;
 }
 
+.menuButton:nth-child(1) {
+  transform: rotate(90deg);
+}
 .menuButton:nth-child(2):hover {
   color: red
 }
