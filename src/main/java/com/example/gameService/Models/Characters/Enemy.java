@@ -22,17 +22,21 @@ public class Enemy {
     private int exp;
 
     @Column
+    private String type;
+
+    @Column
     private int level;
 
     @ManyToOne
     @JoinColumn(name = "weapon_id")
     private Weapon weapon;
 
-    public Enemy(String name, int maxHealth, int exp, int level, Weapon weapon) {
+    public Enemy(String name, int maxHealth, int exp, int level, String type, Weapon weapon) {
         this.name = name;
         this.maxHealth = maxHealth;
         this.exp = exp;
         this.level = level;
+        this.type = type;
         this.weapon = weapon;
     }
 
@@ -77,6 +81,10 @@ public class Enemy {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    public String getType() { return type; }
+
+    public void  setType(String type) {this.type = type;}
 
     public Weapon getWeapon() {
         return weapon;

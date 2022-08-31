@@ -22,6 +22,9 @@ public class Player {
     private String characterClass;
 
     @Column
+    private String type;
+
+    @Column
     private int exp = 0;
 
     @Column
@@ -31,12 +34,13 @@ public class Player {
     @JoinColumn(name = "weapon_id")
     private Weapon weapon;
 
-    public Player(String name, int maxHealth, String characterClass, int exp, int level, Weapon weapon) {
+    public Player(String name, int maxHealth, String characterClass, int exp, int level, String type, Weapon weapon) {
         this.name = name;
         this.maxHealth = maxHealth;
         this.characterClass = characterClass;
         this.exp = exp;
         this.level = level;
+        this.type = type;
         this.weapon = weapon;
     }
 
@@ -97,5 +101,13 @@ public class Player {
 
     public void setCharacterClass(String characterClass) {
         this.characterClass = characterClass;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
