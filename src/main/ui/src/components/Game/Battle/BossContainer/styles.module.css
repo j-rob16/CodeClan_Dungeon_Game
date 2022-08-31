@@ -20,7 +20,7 @@
                       "player player battlemenu";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: minmax(1fr 4fr 1fr);
-  width: 100%;
+  width: 80%;
   justify-content: center;
   }
 

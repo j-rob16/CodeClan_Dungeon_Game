@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 export const PreBoss = ({ selectedCharacter, onClick }) => {
   return (
-    <div>
+    <div className={styles.main}>
       <h3>
         <StartGameNarrator className={styles.narrator}
           script={

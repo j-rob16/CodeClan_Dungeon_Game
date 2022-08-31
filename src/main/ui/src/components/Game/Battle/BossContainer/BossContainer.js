@@ -39,8 +39,7 @@ export const BossContainer = ({ selectedCharacter, bossEncounter, onGameEnd}) =>
   return (
     <>
       
-      <div className={styles.main}>
-        {/* Grid container */}
+   
         <div className={styles.screen}>
           {/* Game Narrator */}
           <div className={styles.narrator}>
@@ -79,7 +78,7 @@ export const BossContainer = ({ selectedCharacter, bossEncounter, onGameEnd}) =>
           </div>
 
         </div>
-      </div>
+    
     </>
     );
 }
