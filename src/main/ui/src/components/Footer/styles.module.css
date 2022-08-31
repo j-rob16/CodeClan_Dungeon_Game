@@ -1,16 +1,15 @@
 .main{
   padding: 0.5rem;
-  text-align: right;
+  text-align: center;
   background-color: transparent;
-  padding-right: 2rem;
   margin: 1rem;
-  font-size: smaller;
+  font-size: medium;
   width: 95%;
 }
 
 .glow {
   color: white;
-  font-size: small;
+  font-size: medium;
   text-shadow: 
   0px 0px 15px rgb(236, 233, 233),
   0px 0px 5px rgba(0,0,0, 1);
