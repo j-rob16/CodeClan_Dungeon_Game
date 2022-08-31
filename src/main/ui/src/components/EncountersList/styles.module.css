@@ -2,7 +2,6 @@
   background-color: transparent;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   padding-top: 3rem;
   text-align: center;
   margin-top: 5rem;
@@ -12,6 +11,7 @@
   margin: auto;
   margin-bottom: 1rem;
 }
+
 .main1{
   background: url(/public/Images/LevelAreaFull.png);
   background-size: cover;
@@ -19,15 +19,9 @@
   width: 80%;
 }
 
-/* div:hover {
-  cursor: pointer;
-} */
-
 .button {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: rgba(188, 140, 103, 1);
-  /* background-color: rgba(255, 215, 169, .8); */
-  background-color: whitesmoke;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -38,11 +32,10 @@
   padding: 10px;
   text-align: center;
   cursor: pointer;
-  box-shadow: 5px, 10px, darkgrey;
+  /* box-shadow: 5px, 10px, darkgrey; */
 }
 
 .button:hover {
-  transform: rotate(358deg);
 }
 
 .CharacterImage{
@@ -70,7 +63,7 @@
   filter: grayscale(100%);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: rgba(188, 140, 103, 1);
-  /* background-color: rgba(255, 215, 169, .8); */
+  background-color: rgba(255, 215, 169, .8);
   background-color: transparent;
   justify-content: center;
   align-items: center;
@@ -86,4 +79,14 @@
 .completedImage {
   height: 100px;
   width: 100px;
+}
+
+.option {
+  background: transparent;
+  border: none;
+}
+
+.option:hover {
+  cursor: pointer;
+  transform: rotate(358deg);
 }
