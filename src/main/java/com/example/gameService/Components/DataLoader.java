@@ -66,7 +66,7 @@ public class DataLoader implements ApplicationRunner {
         Enemy Ent = new Enemy("Neck Beard", 100, 50, 1, "Ent", shortSword);
         enemyRepository.save(Ent);
 
-        Enemy Warrior = new Enemy("Jaguar Paw", 100, 50, 1,"Warrior", shortSword);
+        Enemy Warrior = new Enemy("Montezuma", 100, 50, 1,"Aztec", shortSword);
         enemyRepository.save(Warrior);
 
         Enemy DaemonKnight = new Enemy("Mr. Crowley", 100, 50, 1, "DaemonKnight", shortSword);
