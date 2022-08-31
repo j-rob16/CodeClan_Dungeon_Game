@@ -151,7 +151,12 @@ export const Main = () => {
       {viewMode === 'leaderboard' && (
         <LeaderBoard
           winner={winner}
-          onStartClick={() => setViewMode('characters')}
+          onStartClick={() => {
+            setViewMode('characters');
+            setEncountersCounter(0);
+            setCompletedEncounters([]);
+          }
+        }
         />
       )}
       {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick} />}
