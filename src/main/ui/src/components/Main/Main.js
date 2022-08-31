@@ -151,7 +151,7 @@ export const Main = () => {
       {viewMode === 'leaderboard' && (
         <LeaderBoard
           winner={winner}
-          onStartClick={() => setViewMode('start')}
+          onStartClick={() => setViewMode('characters')}
         />
       )}
       {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick} />}
