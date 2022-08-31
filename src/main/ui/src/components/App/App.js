@@ -7,5 +7,5 @@ export const App = () => {
     <div className={styles.main}>
       <Main />
     </div>
-  )
-}
+  );
+};
