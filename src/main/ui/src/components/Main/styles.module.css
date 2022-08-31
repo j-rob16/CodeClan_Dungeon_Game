@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: Aboreto;
+  font-family: Aboreto, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .screen {
