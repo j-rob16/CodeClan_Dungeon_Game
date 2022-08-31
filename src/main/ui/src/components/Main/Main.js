@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
-import { Header, LeaderBoard, Footer, StartMenu, EndMenu, BattleContainer, CharacterSelect, EncounterSelect} from 'components';
+import {
+  Header,
+  LeaderBoard,
+  Footer,
+  StartMenu,
+  EndMenu,
+  BattleContainer,
+  CharacterSelect,
+  EncounterSelect,
+} from 'components';
 import { BossContainer } from 'components/Game/Battle/BossContainer';
 
 export const Main = () => {
@@ -14,7 +23,7 @@ export const Main = () => {
   const [encountersCounter, setEncountersCounter] = useState(0);
   const [bossEncounter, setBossEncounter] = useState(null);
   const [completedEncounters, setCompletedEncounters] = useState([]);
-  
+
   const getGameData = () =>
     Promise.all([
       fetch('http://localhost:8080/players'),
@@ -41,7 +50,7 @@ export const Main = () => {
 
   useEffect(() => {
     getGameData();
-  }, []); 
+  }, []);
 
   async function setAllGameData() {
     setPlayersData(gameData[0]);
@@ -51,76 +60,106 @@ export const Main = () => {
     setEncountersData(gameData[3]);
   }
 
-  async function setMainBossEncounter(){
+  async function setMainBossEncounter() {
     setBossEncounter(gameData[4]);
   }
 
-  async function addCompletedEncounter(id){
-    completedEncounters.push(id)
+  async function addCompletedEncounter(id) {
+    completedEncounters.push(id);
   }
 
   useEffect(() => {
     setAllGameData();
-  }, [gameData])
+  }, [gameData]);
 
   useEffect(() => {
     setAllEncounterData();
-  }, [gameData])
-
-  useEffect(() =>{
-    setMainBossEncounter();
-  }, [gameData])
-
-  const viewModeClick = (string) => {
-    setViewMode(string);
-  }
-
-  const incrementEncounterCounter = () => {
-    setEncountersCounter( encountersCounter + 1)
-  };
-
+  }, [gameData]);
 
   useEffect(() => {
-    if (viewMode === 'game'){
+    setMainBossEncounter();
+  }, [gameData]);
+
+  const viewModeClick = string => {
+    setViewMode(string);
+  };
+
+  const incrementEncounterCounter = () => {
+    setEncountersCounter(encountersCounter + 1);
+  };
+
+  useEffect(() => {
+    if (viewMode === 'game') {
       setWinner(undefined);
     }
   }, [viewMode]);
 
-  useEffect(()=> {
-    if (encountersCounter === 3){
-      setViewMode('boss')
-      }
-  }, [viewMode])
+  useEffect(() => {
+    if (encountersCounter === 3) {
+      setViewMode('boss');
+    }
+  }, [viewMode]);
 
   // state for leaderboard or gamecontainer to render either component ??
 
   return (
     <div className={styles.main}>
-
-      <Header viewModeClick={viewModeClick}/>
+      <Header viewModeClick={viewModeClick} />
       {/* leaderboard or game container conditionally rendered by button click? yar */}
-      {viewMode === 'characters' && <CharacterSelect playersData={playersData} viewModeClick={viewModeClick} onCharacterClick={setSelectedCharacter}/>}
-      {viewMode === 'encounters' && <EncounterSelect encountersData={encountersData}
-        viewModeClick={viewModeClick}
-        onEncounterClick={setSelectedEncounter}
-        addCompletedEncounter={addCompletedEncounter}
-        completedEncounters={completedEncounters}/>}
+      {viewMode === 'characters' && (
+        <CharacterSelect
+          playersData={playersData}
+          viewModeClick={viewModeClick}
+          onCharacterClick={setSelectedCharacter}
+        />
+      )}
+      {viewMode === 'encounters' && (
+        <EncounterSelect
+          encountersData={encountersData}
+          viewModeClick={viewModeClick}
+          onEncounterClick={setSelectedEncounter}
+          addCompletedEncounter={addCompletedEncounter}
+          completedEncounters={completedEncounters}
+        />
+      )}
 
-      {selectedCharacter !== null && selectedEncounter !== null && viewMode === 'game' && <BattleContainer 
-          selectedCharacter={selectedCharacter} 
-          selectedEncounter={selectedEncounter}
-          gameData={gameData} 
+      {selectedCharacter !== null &&
+        selectedEncounter !== null &&
+        viewMode === 'game' && (
+          <BattleContainer
+            selectedCharacter={selectedCharacter}
+            selectedEncounter={selectedEncounter}
+            gameData={gameData}
+            onGameEnd={winner => {
+              incrementEncounterCounter();
+              setWinner(winner);
+              setViewMode('encounters');
+            }}
+          />
+        )}
+      {viewMode === 'boss' && (
+        <BossContainer
+          selectedCharacter={selectedCharacter}
+          bossEncounter={bossEncounter[0]}
           onGameEnd={winner => {
             incrementEncounterCounter();
             setWinner(winner);
-            setViewMode('encounters');
+            setViewMode('leaderboard');
           }}
-        />}
-      {viewMode === 'boss' && <BossContainer selectedCharacter={selectedCharacter} bossEncounter={bossEncounter[0]}/>}
-      {viewMode === 'leaderBoard' && <LeaderBoard />}
-      {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick}/>}
+        />
+      )}
+      {viewMode === 'leaderboard' && (
+        <LeaderBoard
+          winner={winner}
+          onStartClick={() => setViewMode('start')}
+        />
+      )}
+      {viewMode === 'start' && <StartMenu viewModeClick={viewModeClick} />}
       {viewMode === 'encounters' && !!winner && (
-        <EndMenu winner={winner} onStartClick={() => setViewMode('start')}/>
+        <EndMenu
+          winner={winner}
+          onStartClick={() => setViewMode('start')}
+        />
       )}
       <Footer />
     </div>

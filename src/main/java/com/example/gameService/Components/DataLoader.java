@@ -57,6 +57,9 @@ public class DataLoader implements ApplicationRunner {
         Weapon kodachi = new Weapon("Kodachi", 18);
         weaponRepository.save(kodachi);
 
+        Weapon deathStick = new Weapon("The stick of Death", 100);
+        weaponRepository.save(deathStick);
+
         Enemy Ogre = new Enemy("Og the Ogre", 100, 50, 1, shortSword);
         enemyRepository.save(Ogre);
 
@@ -74,6 +77,9 @@ public class DataLoader implements ApplicationRunner {
 
         Player gimli = new Player("Gimli", 120, "Dwarven Axemaster", 0, 1, battleAxe);
         playerRepository.save(gimli);
+
+        Player admin = new Player("Arnesto", 120, "Admin Extraodinaire", 1000, 100, deathStick);
+        playerRepository.save(admin);
 
         BattleEncounter battle1 = new BattleEncounter("First battle", Slug);
         battleEncounterRepository.save(battle1);
