@@ -11,6 +11,7 @@ import {
   EncounterSelect,
 } from 'components';
 import { BossContainer } from 'components/Game/Battle/BossContainer';
+import { PreBoss } from 'components/Game/Battle/PreBossContainer';
 
 export const Main = () => {
   const [viewMode, setViewMode] = useState('start');
@@ -96,7 +97,7 @@ export const Main = () => {
 
   useEffect(() => {
     if (encountersCounter === 3) {
-      setViewMode('boss');
+      setViewMode('preBoss');
     }
   }, [viewMode]);
 
@@ -137,6 +138,15 @@ export const Main = () => {
             }}
           />
         )}
+      {viewMode === 'preBoss' && (
+        <PreBoss
+          selectedCharacter={selectedCharacter}
+          onClick={() => {
+            incrementEncounterCounter();
+            setViewMode('boss');
+          }}
+        />
+      )}
       {viewMode === 'boss' && (
         <BossContainer
           selectedCharacter={selectedCharacter}
