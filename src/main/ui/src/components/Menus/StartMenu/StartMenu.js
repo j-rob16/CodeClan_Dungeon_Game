@@ -17,14 +17,9 @@ export const StartMenu = ({ viewModeClick }) => {
       {/* <GameNarrator className={styles.text} script={'Are you ready to begin your journey?'} /> */}
 
       <StartGameNarrator
-        script={'Click to begin your journey, lads.'}
-        // onClick={handleButtonClick}
+        script={'Click to begin your journey.'}
         viewModeClick={viewModeClick}
       />
-
-      {/* <button className={styles.startButton} 
-      onClick={handleButtonClick} 
-      value='characters'>Start Game Button</button> */}
     </div>
   );
 };
