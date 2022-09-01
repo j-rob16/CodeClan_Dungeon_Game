@@ -13,7 +13,7 @@ export const PreBoss = ({ selectedCharacter, onClick }) => {
         />
       </h3>
       <button className={styles.button} onClick={onClick}>
-        Click to proceed. If you dare...
+        Click here to proceed. If you dare...
       </button>
     </div>
   );

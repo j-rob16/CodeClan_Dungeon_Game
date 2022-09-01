@@ -14,10 +14,8 @@ export const StartMenu = ({ viewModeClick }) => {
 
   return (
     <div className={styles.main}>
-      {/* <GameNarrator className={styles.text} script={'Are you ready to begin your journey?'} /> */}
-
       <StartGameNarrator
-        script={'Click to begin your journey.'}
+        script={'Click here to begin your journey.'}
         viewModeClick={viewModeClick}
       />
     </div>

@@ -6,7 +6,7 @@ export const LeaderBoard = ({ winner, onStartClick }) => {
     <div className={styles.main}>
       {/* <h1 className={styles.glow}> */}
       <StartGameNarrator
-        script={`${winner.name} has completed their journey.`}
+        script={`${winner.name} has completed their journey. Click here to begin anew.`}
         viewModeClick={onStartClick}
       />
         {/* {winner.name} has completed their journey! */}
