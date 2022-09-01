@@ -7,8 +7,8 @@
 .characterImage{
   
   height: 20rem;
-  scale: 70%;
-  padding: 5rem;
+  scale: 80%;
+  padding-top: 4rem;
   /* object-position: top 40px right 10px; */
 
 
@@ -16,5 +16,6 @@
 .EnemyImage {
     transform: scaleX(-1);
     height: 20rem;
-    scale: 70%;
+    scale: 75%;
  }
+

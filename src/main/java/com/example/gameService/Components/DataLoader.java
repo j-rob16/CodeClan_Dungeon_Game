@@ -87,7 +87,7 @@ public class DataLoader implements ApplicationRunner {
         Player admin = new Player("Arnesto", 120, "Admin Extraodinaire", 1000, 100, "Admin", deathStick);
         playerRepository.save(admin);
 
-        Player elf = new Player("Nimrodel", 100, "Warmaster of The Forest", 0, 1, "Elf", wakizashi);
+        Player elf = new Player("Nimrodel", 100, "Warmaiden of The Forest", 0, 1, "Elf", wakizashi);
         playerRepository.save(elf);
 
         BattleEncounter battle1 = new BattleEncounter("First battle", Ent);
