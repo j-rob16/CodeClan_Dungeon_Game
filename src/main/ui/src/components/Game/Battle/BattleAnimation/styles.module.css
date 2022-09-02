@@ -1,0 +1,21 @@
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.characterImage{
+  
+  height: 20rem;
+  scale: 80%;
+  padding-top: 4rem;
+  /* object-position: top 40px right 10px; */
+
+
+}
+.EnemyImage {
+    transform: scaleX(-1);
+    height: 20rem;
+    scale: 75%;
+ }
+

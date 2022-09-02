@@ -57,28 +57,55 @@ public class DataLoader implements ApplicationRunner {
         Weapon kodachi = new Weapon("Kodachi", 18);
         weaponRepository.save(kodachi);
 
-        Enemy Ogre = new Enemy("Og the Ogre", 100, 50, 1, shortSword);
-        enemyRepository.save(Ogre);
+        Weapon deathStick = new Weapon("The stick of Death", 100);
+        weaponRepository.save(deathStick);
 
-        Enemy Troll = new Enemy("Tom the Troll", 100, 50, 1, shortSword);
-        enemyRepository.save(Troll);
+        Weapon soulStealer = new Weapon("The Burning Blade", 40);
+        weaponRepository.save(soulStealer);
 
-        Enemy Bat = new Enemy("Bob the Bat", 100, 50, 1, shortSword);
-        enemyRepository.save(Bat);
+        Enemy Ent = new Enemy("Neck Beard", 100, 50, 1, "Ent", shortSword);
+        enemyRepository.save(Ent);
 
-        Enemy Slug = new Enemy("Sam the Slug", 100, 50, 1, shortSword);
-        enemyRepository.save(Slug);
+        Enemy Warrior = new Enemy("Montezuma", 100, 50, 1,"Aztec", shortSword);
+        enemyRepository.save(Warrior);
 
-        Player kevin = new Player("Kevin", 100, 10,1, battleAxe);
+        Enemy DaemonKnight = new Enemy("Mr. Crowley", 100, 50, 1, "DaemonKnight", shortSword);
+        enemyRepository.save(DaemonKnight);
+
+        Enemy Minotaur = new Enemy("Gary the Minotaur", 100, 50, 1, "Minotaur", shortSword);
+        enemyRepository.save(Minotaur);
+
+        Enemy Boss = new Enemy("Mitch, Master of Malevolence", 150, 150, 2, "Boss", battleAxe);
+        enemyRepository.save(Boss);
+
+        Player kevin = new Player("Kevin", 100, "Knight of The Wobbly Table", 0, 1, "Warrior", shortSword);
         playerRepository.save(kevin);
 
-        BattleEncounter battle1 = new BattleEncounter("First battle", Slug);
+        Player gimli = new Player("Gimli", 120, "Dwarven Axemaster", 0, 1, "Dwarf", battleAxe);
+        playerRepository.save(gimli);
+
+        Player admin = new Player("Arnesto", 120, "Admin Extraodinaire", 1000, 100, "Admin", deathStick);
+        playerRepository.save(admin);
+
+        Player elf = new Player("Nimrodel", 100, "Warmaiden of The Forest", 0, 1, "Elf", wakizashi);
+        playerRepository.save(elf);
+
+        BattleEncounter battle1 = new BattleEncounter("First battle", Ent);
         battleEncounterRepository.save(battle1);
+
+        BattleEncounter battle2 = new BattleEncounter("Second Battle", Minotaur);
+        battleEncounterRepository.save(battle2);
+
+        BattleEncounter battle3 = new BattleEncounter("Third Battle", DaemonKnight);
+        battleEncounterRepository.save(battle3);
+
+        BattleEncounter battle4 = new BattleEncounter("Fourth Battle", Warrior);
+        battleEncounterRepository.save(battle4);
 
         LootEncounter loot1 = new LootEncounter("First swag", kodachi);
         lootEncounterRepository.save(loot1);
 
-        BossEncounter boss1 = new BossEncounter("First boss", Bat);
+        BossEncounter boss1 = new BossEncounter("First boss", Boss);
         bossEncounterRepository.save(boss1);
     }
 }

@@ -1,0 +1,92 @@
+.main{
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 3rem;
+  text-align: center;
+  margin-top: 5rem;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 40%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.main1{
+  background: url(/public/Images/LevelAreaFull.png);
+  background-size: cover;
+  height: 656px;
+  width: 80%;
+}
+
+.button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgba(188, 140, 103, 1);
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  margin: 10px;
+  border-radius: 12px;
+  border: 1px black solid;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  /* box-shadow: 5px, 10px, darkgrey; */
+}
+
+.button:hover {
+}
+
+.CharacterImage{
+  height: 100px;
+}
+
+.stats {
+  font-size: larger;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+.GameNarrator{
+  background-color: transparent;
+}
+
+.title {
+  margin-top: 10%;
+}
+
+.completed {
+  filter: grayscale(100%);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgba(188, 140, 103, 1);
+  background-color: rgba(255, 215, 169, .8);
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  margin: 10px;
+  border-radius: 12px;
+  border: 1px grey;
+  padding: 10px;
+  text-align: center;
+}
+
+.completedImage {
+  height: 100px;
+  width: 100px;
+}
+
+.option {
+  background: transparent;
+  border: none;
+}
+
+.option:hover {
+  cursor: pointer;
+  transform: rotate(358deg);
+}

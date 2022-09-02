@@ -1,0 +1,52 @@
+.main{
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  height: 90%;
+  margin: auto;
+  margin-bottom: 1rem;
+  box-shadow: -1px 15px 30px -12px black;
+  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  /* transform: rotate(360deg); */
+
+}
+
+.main:hover {
+  cursor: pointer;
+  transform: rotate(359.5deg);
+  box-shadow: 5px 5px 5px black;
+}
+
+.button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100px;
+  margin: 1rem;
+  border-radius: 10px;
+  border: 1px black solid;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: rotate(358deg);
+}
+
+.CharacterImage{
+  height: 120px;
+}
+
+.stats {
+  width: 40%;
+  overflow-wrap: break-word;
+}

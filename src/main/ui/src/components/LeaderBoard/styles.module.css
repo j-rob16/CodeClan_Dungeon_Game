@@ -1,0 +1,42 @@
+.main {
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem;
+  background-color: transparent;
+  /* background-image: url(https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/3ec04946-604a-4011-9e42-027d362fcbb7_scaled.jpg); */
+  /* background-image: url(https://t3.ftcdn.net/jpg/02/96/74/90/360_F_296749091_cBS5tC0ike7Z8UedzPL74nYFRc9Q3rjW.jpg); */
+  /* background-image: url(https://images.unsplash.com/photo-1597299407241-638aa26e56c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=857&q=80); */
+  width: 80%;
+  background-size: cover;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow {
+  color: white;
+  font-size: xx-large;
+  text-shadow: 0px 0px 15px rgb(236, 233, 233),
+    0px 0px 5px rgba(0, 0, 0, 1);
+  padding-left: 1rem;
+}
+
+.button {
+  margin-top: 1rem;
+  border: 1px white solid;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: white;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100px;
+  margin: 1rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
